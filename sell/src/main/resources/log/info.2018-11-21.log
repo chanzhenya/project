@@ -1,0 +1,667 @@
+2018-11-21 10:29:22,314 - Starting ProductCategoryRepositoryTest on DESKTOP-SUJGVF7 with PID 12072 (started by Judith in D:\documents\git\sell)
+2018-11-21 10:29:22,315 - No active profile set, falling back to default profiles: default
+2018-11-21 10:29:22,366 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7188af83: startup date [Wed Nov 21 10:29:22 CST 2018]; root of context hierarchy
+2018-11-21 10:29:22,768 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 10:29:24,068 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 10:29:24,096 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 10:29:24,193 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 10:29:24,194 - HHH000206: hibernate.properties not found
+2018-11-21 10:29:24,195 - HHH000021: Bytecode provider name : javassist
+2018-11-21 10:29:24,268 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 10:29:24,407 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 10:29:24,929 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 10:29:25,532 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7188af83: startup date [Wed Nov 21 10:29:22 CST 2018]; root of context hierarchy
+2018-11-21 10:29:25,589 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 10:29:25,590 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 10:29:25,592 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 10:29:25,592 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 10:29:25,623 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 10:29:25,757 - Started ProductCategoryRepositoryTest in 3.867 seconds (JVM running for 4.75)
+2018-11-21 10:29:25,850 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7188af83: startup date [Wed Nov 21 10:29:22 CST 2018]; root of context hierarchy
+2018-11-21 10:29:25,850 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 10:32:27,141 - Starting ProductCategoryRepositoryTest on DESKTOP-SUJGVF7 with PID 3464 (started by Judith in D:\documents\git\sell)
+2018-11-21 10:32:27,142 - No active profile set, falling back to default profiles: default
+2018-11-21 10:32:27,164 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7188af83: startup date [Wed Nov 21 10:32:27 CST 2018]; root of context hierarchy
+2018-11-21 10:32:27,405 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 10:32:28,254 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 10:32:28,273 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 10:32:28,320 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 10:32:28,320 - HHH000206: hibernate.properties not found
+2018-11-21 10:32:28,320 - HHH000021: Bytecode provider name : javassist
+2018-11-21 10:32:28,335 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 10:32:28,407 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 10:32:28,743 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 10:32:29,143 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7188af83: startup date [Wed Nov 21 10:32:27 CST 2018]; root of context hierarchy
+2018-11-21 10:32:29,174 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 10:32:29,174 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 10:32:29,205 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 10:32:29,205 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 10:32:29,221 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 10:32:29,354 - Started ProductCategoryRepositoryTest in 2.502 seconds (JVM running for 2.95)
+2018-11-21 10:32:29,453 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7188af83: startup date [Wed Nov 21 10:32:27 CST 2018]; root of context hierarchy
+2018-11-21 10:32:29,453 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:51:27,602 - Starting ProductCategoryRepositoryTest on DESKTOP-SUJGVF7 with PID 16704 (started by Judith in D:\documents\git\sell)
+2018-11-21 11:51:27,603 - No active profile set, falling back to default profiles: default
+2018-11-21 11:51:27,623 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:51:27 CST 2018]; root of context hierarchy
+2018-11-21 11:51:27,885 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 11:51:28,766 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:51:28,778 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 11:51:28,832 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 11:51:28,833 - HHH000206: hibernate.properties not found
+2018-11-21 11:51:28,834 - HHH000021: Bytecode provider name : javassist
+2018-11-21 11:51:28,864 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 11:51:28,942 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 11:51:29,289 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:51:29,680 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:51:27 CST 2018]; root of context hierarchy
+2018-11-21 11:51:29,719 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 11:51:29,719 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 11:51:29,734 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:51:29,735 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:51:29,756 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:51:29,906 - Started ProductCategoryRepositoryTest in 2.595 seconds (JVM running for 3.041)
+2018-11-21 11:51:30,013 - Closing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:51:27 CST 2018]; root of context hierarchy
+2018-11-21 11:51:30,014 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:54:53,034 - Starting ProductCategoryRepositoryTest on DESKTOP-SUJGVF7 with PID 12124 (started by Judith in D:\documents\git\sell)
+2018-11-21 11:54:53,035 - No active profile set, falling back to default profiles: default
+2018-11-21 11:54:53,054 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:54:53 CST 2018]; root of context hierarchy
+2018-11-21 11:54:53,289 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 11:54:54,164 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:54:54,175 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 11:54:54,221 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 11:54:54,222 - HHH000206: hibernate.properties not found
+2018-11-21 11:54:54,223 - HHH000021: Bytecode provider name : javassist
+2018-11-21 11:54:54,251 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 11:54:54,324 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 11:54:54,661 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:54:55,059 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:54:53 CST 2018]; root of context hierarchy
+2018-11-21 11:54:55,100 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 11:54:55,102 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 11:54:55,119 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:54:55,119 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:54:55,149 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:54:55,279 - Started ProductCategoryRepositoryTest in 2.521 seconds (JVM running for 2.964)
+2018-11-21 11:54:55,365 - Closing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:54:53 CST 2018]; root of context hierarchy
+2018-11-21 11:54:55,366 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:55:13,524 - Starting ProductCategoryRepositoryTest on DESKTOP-SUJGVF7 with PID 13176 (started by Judith in D:\documents\git\sell)
+2018-11-21 11:55:13,525 - No active profile set, falling back to default profiles: default
+2018-11-21 11:55:13,548 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:55:13 CST 2018]; root of context hierarchy
+2018-11-21 11:55:13,796 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 11:55:14,709 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:55:14,719 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 11:55:14,764 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 11:55:14,765 - HHH000206: hibernate.properties not found
+2018-11-21 11:55:14,765 - HHH000021: Bytecode provider name : javassist
+2018-11-21 11:55:14,791 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 11:55:14,863 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 11:55:15,200 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 11:55:15,606 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:55:13 CST 2018]; root of context hierarchy
+2018-11-21 11:55:15,646 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 11:55:15,647 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 11:55:15,669 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:55:15,669 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:55:15,694 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 11:55:15,824 - Started ProductCategoryRepositoryTest in 2.6 seconds (JVM running for 3.037)
+2018-11-21 11:55:15,903 - Closing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 11:55:13 CST 2018]; root of context hierarchy
+2018-11-21 11:55:15,904 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 12:56:42,922 - Starting ProductCategoryRepositoryTest on DESKTOP-SUJGVF7 with PID 9000 (started by Judith in D:\documents\git\sell)
+2018-11-21 12:56:42,923 - No active profile set, falling back to default profiles: default
+2018-11-21 12:56:42,945 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 12:56:42 CST 2018]; root of context hierarchy
+2018-11-21 12:56:43,171 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 12:56:44,009 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 12:56:44,020 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 12:56:44,066 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 12:56:44,067 - HHH000206: hibernate.properties not found
+2018-11-21 12:56:44,068 - HHH000021: Bytecode provider name : javassist
+2018-11-21 12:56:44,094 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 12:56:44,165 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 12:56:44,513 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 12:56:44,935 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 12:56:42 CST 2018]; root of context hierarchy
+2018-11-21 12:56:44,977 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 12:56:44,977 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 12:56:44,995 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 12:56:44,996 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 12:56:45,025 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 12:56:45,157 - Started ProductCategoryRepositoryTest in 2.523 seconds (JVM running for 2.992)
+2018-11-21 12:56:45,229 - Closing org.springframework.web.context.support.GenericWebApplicationContext@6be968ce: startup date [Wed Nov 21 12:56:42 CST 2018]; root of context hierarchy
+2018-11-21 12:56:45,230 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:22:59,295 - Starting CategoryServiceImplTest on DESKTOP-SUJGVF7 with PID 14508 (started by Judith in D:\documents\git\sell)
+2018-11-21 13:22:59,295 - No active profile set, falling back to default profiles: default
+2018-11-21 13:22:59,313 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:22:59 CST 2018]; root of context hierarchy
+2018-11-21 13:22:59,540 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 13:23:00,397 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:23:00,408 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 13:23:00,453 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 13:23:00,454 - HHH000206: hibernate.properties not found
+2018-11-21 13:23:00,454 - HHH000021: Bytecode provider name : javassist
+2018-11-21 13:23:00,483 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 13:23:00,556 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 13:23:00,894 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:23:01,363 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:22:59 CST 2018]; root of context hierarchy
+2018-11-21 13:23:01,410 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 13:23:01,411 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 13:23:01,426 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:23:01,426 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:23:01,446 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:23:01,575 - Started CategoryServiceImplTest in 2.556 seconds (JVM running for 3.021)
+2018-11-21 13:23:01,641 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:22:59 CST 2018]; root of context hierarchy
+2018-11-21 13:23:01,642 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:23:49,035 - Starting CategoryServiceImplTest on DESKTOP-SUJGVF7 with PID 1812 (started by Judith in D:\documents\git\sell)
+2018-11-21 13:23:49,035 - No active profile set, falling back to default profiles: default
+2018-11-21 13:23:49,058 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:23:49 CST 2018]; root of context hierarchy
+2018-11-21 13:23:49,308 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 13:23:50,181 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:23:50,192 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 13:23:50,241 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 13:23:50,242 - HHH000206: hibernate.properties not found
+2018-11-21 13:23:50,243 - HHH000021: Bytecode provider name : javassist
+2018-11-21 13:23:50,272 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 13:23:50,351 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 13:23:50,695 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:23:51,112 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:23:49 CST 2018]; root of context hierarchy
+2018-11-21 13:23:51,151 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 13:23:51,152 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 13:23:51,168 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:23:51,168 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:23:51,189 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:23:51,328 - Started CategoryServiceImplTest in 2.588 seconds (JVM running for 3.027)
+2018-11-21 13:23:51,399 - HHH000397: Using ASTQueryTranslatorFactory
+2018-11-21 13:23:51,526 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:23:49 CST 2018]; root of context hierarchy
+2018-11-21 13:23:51,527 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:23:58,069 - Starting CategoryServiceImplTest on DESKTOP-SUJGVF7 with PID 12596 (started by Judith in D:\documents\git\sell)
+2018-11-21 13:23:58,069 - No active profile set, falling back to default profiles: default
+2018-11-21 13:23:58,089 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:23:58 CST 2018]; root of context hierarchy
+2018-11-21 13:23:58,333 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 13:23:59,153 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:23:59,164 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 13:23:59,209 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 13:23:59,210 - HHH000206: hibernate.properties not found
+2018-11-21 13:23:59,210 - HHH000021: Bytecode provider name : javassist
+2018-11-21 13:23:59,237 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 13:23:59,310 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 13:23:59,640 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:24:00,060 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:23:58 CST 2018]; root of context hierarchy
+2018-11-21 13:24:00,106 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 13:24:00,107 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 13:24:00,122 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:24:00,122 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:24:00,147 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:24:00,285 - Started CategoryServiceImplTest in 2.495 seconds (JVM running for 2.941)
+2018-11-21 13:24:00,319 - HHH000397: Using ASTQueryTranslatorFactory
+2018-11-21 13:24:00,415 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:23:58 CST 2018]; root of context hierarchy
+2018-11-21 13:24:00,416 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:24:27,630 - Starting CategoryServiceImplTest on DESKTOP-SUJGVF7 with PID 18292 (started by Judith in D:\documents\git\sell)
+2018-11-21 13:24:27,631 - No active profile set, falling back to default profiles: default
+2018-11-21 13:24:27,656 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@62452cc9: startup date [Wed Nov 21 13:24:27 CST 2018]; root of context hierarchy
+2018-11-21 13:24:27,918 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 13:24:28,875 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:24:28,886 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 13:24:28,931 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 13:24:28,932 - HHH000206: hibernate.properties not found
+2018-11-21 13:24:28,933 - HHH000021: Bytecode provider name : javassist
+2018-11-21 13:24:28,961 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 13:24:29,048 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 13:24:29,429 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:24:29,952 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@62452cc9: startup date [Wed Nov 21 13:24:27 CST 2018]; root of context hierarchy
+2018-11-21 13:24:30,012 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 13:24:30,013 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 13:24:30,035 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:24:30,035 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:24:30,063 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:24:30,298 - Started CategoryServiceImplTest in 3.021 seconds (JVM running for 3.57)
+2018-11-21 13:24:30,343 - HHH000397: Using ASTQueryTranslatorFactory
+2018-11-21 13:26:01,139 - Closing org.springframework.web.context.support.GenericWebApplicationContext@62452cc9: startup date [Wed Nov 21 13:24:27 CST 2018]; root of context hierarchy
+2018-11-21 13:26:01,140 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:27:53,396 - Starting CategoryServiceImplTest on DESKTOP-SUJGVF7 with PID 10080 (started by Judith in D:\documents\git\sell)
+2018-11-21 13:27:53,397 - No active profile set, falling back to default profiles: default
+2018-11-21 13:27:53,420 - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:27:53 CST 2018]; root of context hierarchy
+2018-11-21 13:27:53,657 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 13:27:54,561 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:27:54,572 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 13:27:54,618 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 13:27:54,619 - HHH000206: hibernate.properties not found
+2018-11-21 13:27:54,620 - HHH000021: Bytecode provider name : javassist
+2018-11-21 13:27:54,648 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 13:27:54,721 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 13:27:55,079 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 13:27:55,535 - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:27:53 CST 2018]; root of context hierarchy
+2018-11-21 13:27:55,574 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 13:27:55,574 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 13:27:55,593 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:27:55,594 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:27:55,615 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 13:27:55,756 - Started CategoryServiceImplTest in 2.634 seconds (JVM running for 3.083)
+2018-11-21 13:27:55,792 - HHH000397: Using ASTQueryTranslatorFactory
+2018-11-21 13:27:55,891 - Closing org.springframework.web.context.support.GenericWebApplicationContext@7c137fd5: startup date [Wed Nov 21 13:27:53 CST 2018]; root of context hierarchy
+2018-11-21 13:27:55,892 - Closing JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:19:33,087 - Starting SellApplication on DESKTOP-SUJGVF7 with PID 12872 (D:\documents\git\sell\target\classes started by Judith in D:\documents\git\sell)
+2018-11-21 17:19:33,088 - No active profile set, falling back to default profiles: default
+2018-11-21 17:19:33,111 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a1153bc: startup date [Wed Nov 21 17:19:33 CST 2018]; root of context hierarchy
+2018-11-21 17:19:33,212 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 17:19:33,667 - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$472e5e3e] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-21 17:19:33,904 - Tomcat initialized with port(s): 8090 (http)
+2018-11-21 17:19:33,912 - Starting service Tomcat
+2018-11-21 17:19:33,912 - Starting Servlet Engine: Apache Tomcat/8.5.14
+2018-11-21 17:19:33,964 - Initializing Spring embedded WebApplicationContext
+2018-11-21 17:19:33,964 - Root WebApplicationContext: initialization completed in 853 ms
+2018-11-21 17:19:34,064 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-11-21 17:19:34,066 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-21 17:19:34,066 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-21 17:19:34,066 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-21 17:19:34,066 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-21 17:19:34,067 - Mapping filter: 'openEntityManagerInViewFilter' to: [/*]
+2018-11-21 17:19:34,352 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:19:34,359 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 17:19:34,393 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 17:19:34,393 - HHH000206: hibernate.properties not found
+2018-11-21 17:19:34,394 - HHH000021: Bytecode provider name : javassist
+2018-11-21 17:19:34,415 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 17:19:34,467 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 17:19:34,695 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:19:34,988 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@a1153bc: startup date [Wed Nov 21 17:19:33 CST 2018]; root of context hierarchy
+2018-11-21 17:19:35,016 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 17:19:35,017 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 17:19:35,033 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 17:19:35,033 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 17:19:35,051 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 17:19:35,175 - Registering beans for JMX exposure on startup
+2018-11-21 17:19:35,189 - Starting beans in phase 0
+2018-11-21 17:19:35,208 - ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [120.77.180.187:9092]
+	check.crcs = true
+	client.id = 
+	connections.max.idle.ms = 540000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = test_A
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2018-11-21 17:19:35,214 - ConsumerConfig values: 
+	auto.commit.interval.ms = 5000
+	auto.offset.reset = latest
+	bootstrap.servers = [120.77.180.187:9092]
+	check.crcs = true
+	client.id = consumer-1
+	connections.max.idle.ms = 540000
+	enable.auto.commit = true
+	exclude.internal.topics = true
+	fetch.max.bytes = 52428800
+	fetch.max.wait.ms = 500
+	fetch.min.bytes = 1
+	group.id = test_A
+	heartbeat.interval.ms = 3000
+	interceptor.classes = null
+	key.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+	max.partition.fetch.bytes = 1048576
+	max.poll.interval.ms = 300000
+	max.poll.records = 500
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partition.assignment.strategy = [class org.apache.kafka.clients.consumer.RangeAssignor]
+	receive.buffer.bytes = 65536
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 305000
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	session.timeout.ms = 10000
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	value.deserializer = class org.apache.kafka.common.serialization.StringDeserializer
+
+2018-11-21 17:19:35,238 - Kafka version : 0.10.1.1
+2018-11-21 17:19:35,238 - Kafka commitId : f10ef2720b03b247
+2018-11-21 17:19:35,244 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-11-21 17:19:35,253 - Initializing ProtocolHandler ["http-nio-8090"]
+2018-11-21 17:19:35,258 - Starting ProtocolHandler ["http-nio-8090"]
+2018-11-21 17:19:35,259 - Using a shared selector for servlet write/read
+2018-11-21 17:19:35,279 - Tomcat started on port(s): 8090 (http)
+2018-11-21 17:19:35,285 - Started SellApplication in 2.399 seconds (JVM running for 2.761)
+2018-11-21 17:19:35,413 - Error while fetching metadata with correlation id 1 : {kafka_test=LEADER_NOT_AVAILABLE}
+2018-11-21 17:19:35,415 - Discovered coordinator 120.77.180.187:9092 (id: 2147483646 rack: null) for group test_A.
+2018-11-21 17:19:35,416 - Revoking previously assigned partitions [] for group test_A
+2018-11-21 17:19:35,416 - partitions revoked:[]
+2018-11-21 17:19:35,416 - (Re-)joining group test_A
+2018-11-21 17:19:35,464 - Successfully joined group test_A with generation 1
+2018-11-21 17:19:35,464 - Setting newly assigned partitions [] for group test_A
+2018-11-21 17:19:35,464 - partitions assigned:[]
+2018-11-21 17:19:36,007 - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [120.77.180.187:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-11-21 17:19:36,009 - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [120.77.180.187:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-11-21 17:19:36,025 - Kafka version : 0.10.1.1
+2018-11-21 17:19:36,025 - Kafka commitId : f10ef2720b03b247
+2018-11-21 17:34:19,525 - Starting SellApplication on DESKTOP-SUJGVF7 with PID 17812 (D:\documents\git\sell\target\classes started by Judith in D:\documents\git\sell)
+2018-11-21 17:34:19,526 - No active profile set, falling back to default profiles: default
+2018-11-21 17:34:19,548 - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@313ac989: startup date [Wed Nov 21 17:34:19 CST 2018]; root of context hierarchy
+2018-11-21 17:34:19,672 - HV000001: Hibernate Validator 5.3.5.Final
+2018-11-21 17:34:20,112 - Bean 'org.springframework.kafka.annotation.KafkaBootstrapConfiguration' of type [org.springframework.kafka.annotation.KafkaBootstrapConfiguration$$EnhancerBySpringCGLIB$$9436094c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2018-11-21 17:34:20,275 - Tomcat initialized with port(s): 8090 (http)
+2018-11-21 17:34:20,282 - Starting service Tomcat
+2018-11-21 17:34:20,282 - Starting Servlet Engine: Apache Tomcat/8.5.14
+2018-11-21 17:34:20,330 - Initializing Spring embedded WebApplicationContext
+2018-11-21 17:34:20,331 - Root WebApplicationContext: initialization completed in 783 ms
+2018-11-21 17:34:20,422 - Mapping servlet: 'dispatcherServlet' to [/]
+2018-11-21 17:34:20,424 - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-11-21 17:34:20,424 - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-11-21 17:34:20,424 - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-11-21 17:34:20,425 - Mapping filter: 'requestContextFilter' to: [/*]
+2018-11-21 17:34:20,425 - Mapping filter: 'openEntityManagerInViewFilter' to: [/*]
+2018-11-21 17:34:20,689 - Building JPA container EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:34:20,697 - HHH000204: Processing PersistenceUnitInfo [
+	name: default
+	...]
+2018-11-21 17:34:20,731 - HHH000412: Hibernate Core {5.0.12.Final}
+2018-11-21 17:34:20,732 - HHH000206: hibernate.properties not found
+2018-11-21 17:34:20,732 - HHH000021: Bytecode provider name : javassist
+2018-11-21 17:34:20,753 - HCANN000001: Hibernate Commons Annotations {5.0.1.Final}
+2018-11-21 17:34:20,805 - HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2018-11-21 17:34:21,024 - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2018-11-21 17:34:21,279 - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@313ac989: startup date [Wed Nov 21 17:34:19 CST 2018]; root of context hierarchy
+2018-11-21 17:34:21,306 - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-11-21 17:34:21,307 - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-11-21 17:34:21,323 - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 17:34:21,323 - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 17:34:21,341 - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-11-21 17:34:21,463 - Registering beans for JMX exposure on startup
+2018-11-21 17:34:21,466 - Starting beans in phase 2147483647
+2018-11-21 17:34:21,470 - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-11-21 17:34:21,475 - Initializing ProtocolHandler ["http-nio-8090"]
+2018-11-21 17:34:21,479 - Starting ProtocolHandler ["http-nio-8090"]
+2018-11-21 17:34:21,485 - Using a shared selector for servlet write/read
+2018-11-21 17:34:21,493 - Tomcat started on port(s): 8090 (http)
+2018-11-21 17:34:21,495 - Started SellApplication in 2.173 seconds (JVM running for 2.537)
+2018-11-21 17:34:22,021 - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [120.77.180.187:9092]
+	buffer.memory = 33554432
+	client.id = 
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-11-21 17:34:22,026 - ProducerConfig values: 
+	acks = 1
+	batch.size = 16384
+	block.on.buffer.full = false
+	bootstrap.servers = [120.77.180.187:9092]
+	buffer.memory = 33554432
+	client.id = producer-1
+	compression.type = none
+	connections.max.idle.ms = 540000
+	interceptor.classes = null
+	key.serializer = class org.apache.kafka.common.serialization.StringSerializer
+	linger.ms = 0
+	max.block.ms = 60000
+	max.in.flight.requests.per.connection = 5
+	max.request.size = 1048576
+	metadata.fetch.timeout.ms = 60000
+	metadata.max.age.ms = 300000
+	metric.reporters = []
+	metrics.num.samples = 2
+	metrics.sample.window.ms = 30000
+	partitioner.class = class org.apache.kafka.clients.producer.internals.DefaultPartitioner
+	receive.buffer.bytes = 32768
+	reconnect.backoff.ms = 50
+	request.timeout.ms = 30000
+	retries = 0
+	retry.backoff.ms = 100
+	sasl.kerberos.kinit.cmd = /usr/bin/kinit
+	sasl.kerberos.min.time.before.relogin = 60000
+	sasl.kerberos.service.name = null
+	sasl.kerberos.ticket.renew.jitter = 0.05
+	sasl.kerberos.ticket.renew.window.factor = 0.8
+	sasl.mechanism = GSSAPI
+	security.protocol = PLAINTEXT
+	send.buffer.bytes = 131072
+	ssl.cipher.suites = null
+	ssl.enabled.protocols = [TLSv1.2, TLSv1.1, TLSv1]
+	ssl.endpoint.identification.algorithm = null
+	ssl.key.password = null
+	ssl.keymanager.algorithm = SunX509
+	ssl.keystore.location = null
+	ssl.keystore.password = null
+	ssl.keystore.type = JKS
+	ssl.protocol = TLS
+	ssl.provider = null
+	ssl.secure.random.implementation = null
+	ssl.trustmanager.algorithm = PKIX
+	ssl.truststore.location = null
+	ssl.truststore.password = null
+	ssl.truststore.type = JKS
+	timeout.ms = 30000
+	value.serializer = class org.apache.kafka.common.serialization.StringSerializer
+
+2018-11-21 17:34:22,044 - Kafka version : 0.10.1.1
+2018-11-21 17:34:22,045 - Kafka commitId : f10ef2720b03b247
