@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    url: jdbc:mysql://localhost:3306/sell?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+  jpa:
+    show-sql: true
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+restart:
+  include:
+    mapper: /mapper-[\\w-\\.]+jar
+    pagehelper: /pagehelper-[\\w-\\.]+jar
+
+mybatis:
+  type-aliases-package: com.czy.mybatisgenerator.entity
+  mapper-locations: classpath:mapper/*.xml
+
+mapper:
+  mappers: com.czy.mybatisgenerator.mapper
+  not-empty: false
+  identity: MYSQL
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
