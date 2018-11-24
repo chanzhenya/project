@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <link href="static/css/register.css" rel="stylesheet" media="screen"/>
+    <title>register</title>
+</head>
+<body>
+    <div id="wrap" class="container">
+        <div class="page-header">
+            <h1>注册(Register)</h1>
+        </div>
+        <div class="form-horizontal row-fluid">
+            <div class="span6">
+                <div class="control-group">
+                    <label class="control-label" for="inputName">姓名 (Name)</label>
+                    <div class="controls">
+                        <input type="text" id="inputName" placeholder="Name"/>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputJobNumber">工号 (Job Number)</label>
+                    <div class="controls">
+                        <input type="text" id="inputJobNumber" placeholder="Job Number"/>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="inputTitle">职称 (Title)</label>
+                    <div class="controls">
+                        <input type="text" id="inputTitle" placeholder="Title"/>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">性别 (Gender)</label>
+                    <div class="controls" style="padding-top: 3px;">
+                        <label class="radio-label"><input type="radio" class="radio-menu-item" name="gender" value="1"/>男 (Male)</label>
+                        <label class="radio-label"><input type="radio" class="radio-menu-item" name="gender" value="0"/>女 (Female)</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="span6">
+                <div class="control-group">
+                    <div class="controls">
+                        <img th:src="@{/static/image/default.jpg}" width="140px" class="img-rounded"/>
+                        <div class="button-wrapper">
+                            <div class="edit-button">
+                                <input type="file" id="photo" size="10"/>
+                                <span class="text">编辑照片</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="btnContainer">
+            <div class="btn btn-primary submit-btn">
+                <span>提交(Submit)</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    ctxPath = /*[[@{/}]]*/ '';
+    /*]]>*/
+</script>　
+<script src="http://code.jquery.com/jquery.js"></script>
+<script th:src="@{static/bootstrap/js/bootstrap.min.js}"></script>
+<script th:src="@{/static/js/register.js}"/>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>index</title>
+</head>
+<body>
+    <div>
+        <div class="login">
+            <span>登录(Log in)</span>
+        </div>
+        <div class="register">
+            <span>注册(register)</span>
+        </div>
+    </div>
+    <div>
+        <input type="file" name="image" id="image"/>
+        <div class="submit">
+            <label>提交</label>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    ctxPath = /*[[@{/}]]*/ '';
+    /*]]>*/
+</script>　
+<script th:src="@{/static/js/jquery-3.3.1.js}"/>
+<script th:src="@{/static/js/index.js}"/>
+</html>

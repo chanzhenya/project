@@ -1,0 +1,61 @@
+server:
+  port: 8080
+  context-path: /access
+  tomcat:
+    uri-encoding: utf-8
+
+spring:
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
+  datasource:
+    url: jdbc:mysql://localhost:3306/access-control?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-actice: 20
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    content-type: text/html
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+  http:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  kafka:
+    consumer:
+      enable-auto-commit: true
+      group-id: testAAAAA
+      auto-offset-reset: latest
+      bootstrap-servers: 120.77.180.187:9092
+
+restart:
+  include:
+    mapper: /mapper-[\\w-\\.]+jar
+    pagehelper: /pagehelper-[\\w-\\.]+jar
+
+mybatis:
+  type-aliases-package: com.bgy.robot.accesscontrol.entity
+  mapper-locations: classpath:mapper/*.xml
+
+mapper:
+  mappers: com.bgy.robot.accesscontrol.mapper
+  not-empty: false
+  identity: MYSQL
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql

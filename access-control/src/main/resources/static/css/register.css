@@ -1,0 +1,54 @@
+#wrap {
+    min-height: 100%;
+    height: auto !important;
+    margin: 0 auto -60px;
+}
+
+#btnContainer {
+    text-align: center;
+}
+/* 透明的遮罩，鼠标移到这里就出现底部灰色按钮 */
+.button-wrapper {
+    width: 140px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    z-index: 99;
+    padding-top: 5px;
+}
+.button-wrapper > .edit-button {
+    width: 100%;
+    display: block;
+    position: relative;
+    padding: 8px 0;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    background-color: #0077b3;
+    border-radius: 6px;
+}
+
+/* 隐藏文件上传框 */
+.button-wrapper > .edit-button > input {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 0;
+    color: transparent;
+    opacity: 0;
+    z-index: 99;
+    cursor: pointer;
+}
+
+.radio-label {
+    display: inline;
+    padding: 5px;
+}
