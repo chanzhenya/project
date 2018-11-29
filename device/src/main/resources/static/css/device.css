@@ -1,0 +1,4 @@
+#myModal .modal-dialog .modal-content .modal-body .control-group .require-label:after {
+    content:"*";
+    color:red;
+}
