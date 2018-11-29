@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bgy.device.mapper.DeviceMapper">
+  <resultMap id="BaseResultMap" type="com.bgy.device.entity.Device">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="device_id" jdbcType="VARCHAR" property="deviceId" />
+    <result column="device_name" jdbcType="VARCHAR" property="deviceName" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="port" jdbcType="INTEGER" property="port" />
+    <result column="pid" jdbcType="VARCHAR" property="pid" />
+    <result column="online" jdbcType="INTEGER" property="online" />
+    <result column="branch_id" jdbcType="VARCHAR" property="branchId" />
+    <result column="device_type_id" jdbcType="INTEGER" property="deviceTypeId" />
+  </resultMap>
+
+  <resultMap id="DetailResultMap" type="com.bgy.device.value.DeviceVo">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="device_id" jdbcType="VARCHAR" property="deviceId" />
+    <result column="device_index" jdbcType="INTEGER" property="index" />
+    <result column="device_name" jdbcType="VARCHAR" property="deviceName" />
+    <result column="ip" jdbcType="VARCHAR" property="ip" />
+    <result column="port" jdbcType="INTEGER" property="port" />
+    <result column="pid" jdbcType="VARCHAR" property="pid" />
+    <result column="online" jdbcType="INTEGER" property="online" />
+    <result column="branch_id" jdbcType="INTEGER" property="branchId" />
+    <result column="branch_name" jdbcType="VARCHAR" property="branchName" />
+    <result column="branch_no" jdbcType="VARCHAR" property="branchNo" />
+    <result column="device_type_id" jdbcType="INTEGER" property="deviceTypeId" />
+    <result column="type_code" jdbcType="VARCHAR" property="deviceTypeCode" />
+    <result column="type_name" jdbcType="VARCHAR" property="deviceTypeName" />
+    <result column="attribute_id" jdbcType="INTEGER" property="attributeId" />
+    <result column="attribute_name" jdbcType="VARCHAR" property="attributeName" />
+    <result column="attribute_value" jdbcType="VARCHAR" property="attributeValue" />
+  </resultMap>
+
+  <select id="findAllDetail" resultMap="DetailResultMap">
+    SELECT d.*,dt.type_code,dt.type_name,b.branch_name,b.branch_no,a.attribute_name,a.attribute_value
+    FROM device d
+    LEFT JOIN device_type dt ON d.device_type_id = dt.type_id
+    LEFT JOIN branch b ON d.branch_id = b.branch_id
+    LEFT JOIN attribute a ON d.attribute_id = a.attribute_id
+  </select>
+
+  <select id="findPerantDevice" resultMap="BaseResultMap">
+    SELECT *
+    FROM device
+    WHERE pid=NULL OR pid=''
+  </select>
+
+  <select id="findMaxIndex" parameterType="com.bgy.device.entity.Device" resultType="java.lang.Integer">
+    SELECT MAX(device_index)
+    FROM device
+    WHERE branch_id = ${branchId} AND device_type_id = ${deviceTypeId}
+  </select>
+</mapper>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bgy.device.mapper.BranchMapper">
+  <resultMap id="BaseResultMap" type="com.bgy.device.entity.Branch">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="branch_id" jdbcType="INTEGER" property="branchId" />
+    <result column="branch_name" jdbcType="VARCHAR" property="branchName" />
+    <result column="branch_no" jdbcType="VARCHAR" property="branchNo" />
+  </resultMap>
+
+</mapper>
