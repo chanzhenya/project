@@ -54,28 +54,19 @@ public class DeviceTypeController {
     }
 
     @PostMapping("/delete")
-    public ResultVo delete(@RequestBody Map<String,Object> params) {
-        try {
-            String data = (String) params.get("data");
-            JSONArray jsonArray = JSONArray.parseArray(data);
-            List<DeviceType> deviceTypes = new ArrayList<>();
-            for(int i=0;i<jsonArray.size();i++) {
-                JSONObject jsonObject = jsonArray.getJSONObject(i);
-                DeviceType deviceType = new DeviceType();
-                deviceType.setTypeId(jsonObject.getInteger("typeId"));
-                deviceType.setTypeName(jsonObject.getString("typeName"));
-                deviceType.setTypeCode(jsonObject.getString("typeCode"));
-                deviceTypes.add(deviceType);
-            }
-            boolean flag = deviceTypeService.delete(deviceTypes);
-            if(flag) {
-                return ResultUtil.success(null);
-            } else {
-                return ResultUtil.error("删除失败，数据正在被应用！");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
+    public ResultVo delete(@RequestBody Map<String,Object> params) throws Exception {
+        String data = (String) params.get("data");
+        JSONArray jsonArray = JSONArray.parseArray(data);
+        List<DeviceType> deviceTypes = new ArrayList<>();
+        for(int i=0;i<jsonArray.size();i++) {
+            JSONObject jsonObject = jsonArray.getJSONObject(i);
+            DeviceType deviceType = new DeviceType();
+            deviceType.setTypeId(jsonObject.getInteger("typeId"));
+            deviceType.setTypeName(jsonObject.getString("typeName"));
+            deviceType.setTypeCode(jsonObject.getString("typeCode"));
+            deviceTypes.add(deviceType);
         }
+        deviceTypeService.delete(deviceTypes);
+        return ResultUtil.success(null);
     }
 }

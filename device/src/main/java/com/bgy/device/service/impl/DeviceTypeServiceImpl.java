@@ -31,15 +31,9 @@ public class DeviceTypeServiceImpl implements DeviceTypeService {
     }
 
     @Override
-    public boolean delete(List<DeviceType> deviceTypes) {
-        try {
-            for(DeviceType type:deviceTypes) {
-                deviceTypeMapper.deleteByPrimaryKey(type);
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+    public void delete(List<DeviceType> deviceTypes) throws Exception {
+        for(DeviceType type:deviceTypes) {
+            deviceTypeMapper.deleteByPrimaryKey(type);
         }
     }
 }

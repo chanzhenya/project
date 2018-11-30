@@ -2,7 +2,13 @@ $(function () {
     initTable();
 
     initButton();
+
+    initHead();
 });
+
+function initHead() {
+    $("#myTab li").eq(4).addClass("active").siblings().removeClass("active");
+}
 
 function initTable(){
     $('#attribute_type_table').bootstrapTable({
@@ -76,8 +82,9 @@ function initButton() {
                     $("#attribute_type_table").bootstrapTable('refresh');
                 }
             },
-            error: function () {
-                toastr.error('Error');
+            error: function (data) {
+                var msg = data.responseJSON.msg;
+                toastr.error(msg);
             },
             complete: function () {
 

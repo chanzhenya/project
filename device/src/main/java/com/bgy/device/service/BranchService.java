@@ -10,5 +10,5 @@ public interface BranchService {
 
     public void save(Branch branch);
 
-    public boolean delete(List<Branch> branches);
+    public void delete(List<Branch> branches) throws Exception;
 }

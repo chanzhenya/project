@@ -8,26 +8,26 @@ public class ViewController {
 
     @GetMapping("/device")
     public String device() {
-        return "/device";
+        return "device";
     }
 
     @GetMapping("/device-type")
     public String deviceType() {
-        return "/device-type";
+        return "device-type";
     }
 
     @GetMapping("/branch")
     public String branch() {
-        return "/branch";
+        return "branch";
     }
 
     @GetMapping("/attribute-type")
     public String attributeType() {
-        return "/attribute-type";
+        return "attribute-type";
     }
 
     @GetMapping("/attribute")
     public String attribute() {
-        return "/attribute";
+        return "attribute";
     }
 }

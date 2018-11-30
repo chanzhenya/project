@@ -68,14 +68,9 @@ public class DeviceServiceImpl implements DeviceService {
     }
 
     @Override
-    public boolean delete(List<String> ids) {
-        try {
-            for(String id:ids) {
-                deviceMapper.deleteByPrimaryKey(id);
-            }
-            return true;
-        } catch (Exception e) {
-            return false;
+    public void delete(List<String> ids) throws Exception {
+        for(String id:ids) {
+            deviceMapper.deleteByPrimaryKey(id);
         }
     }
 }

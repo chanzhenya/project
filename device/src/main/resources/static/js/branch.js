@@ -1,8 +1,12 @@
 $(function () {
     initTable();
-
+    initHead();
     initButton();
 });
+
+function initHead() {
+    $("#myTab li").eq(2).addClass("active").siblings().removeClass("active");
+}
 
 function initTable(){
     $('#branch_table').bootstrapTable({

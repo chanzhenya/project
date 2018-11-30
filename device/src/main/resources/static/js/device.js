@@ -1,10 +1,17 @@
 $(function () {
+
     initTable();
 
     initButton();
 
     initSelect();
+
+    initHead();
 });
+
+function initHead() {
+    $("#myTab li").eq(0).addClass("active").siblings().removeClass("active");
+}
 
 function initTable(){
     $('#device_table').bootstrapTable({

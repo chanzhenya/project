@@ -10,7 +10,7 @@ public interface AttributeTypeService {
 
     public void save(AttributeType attributeType);
 
-    public boolean delete(List<AttributeType> attributeTypes);
+    public void delete(List<AttributeType> attributeTypes) throws Exception;
 
     public AttributeType findById(Integer id);
 }

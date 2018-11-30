@@ -10,5 +10,5 @@ public interface DeviceTypeService {
 
     public void save(DeviceType deviceType);
 
-    public boolean delete(List<DeviceType> deviceTypes);
+    public void delete(List<DeviceType> deviceTypes) throws Exception;
 }

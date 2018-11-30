@@ -4,7 +4,13 @@ $(function () {
     initButton();
 
     initSelect();
+
+    initHead();
 });
+
+function initHead() {
+    $("#myTab li").eq(3).addClass("active").siblings().removeClass("active");
+}
 
 function initTable(){
     $('#attribute_table').bootstrapTable({

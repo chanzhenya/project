@@ -49,27 +49,18 @@ public class AttributeTypeController {
     }
 
     @PostMapping("/delete")
-    public ResultVo delete(@RequestBody Map<String,Object> params) {
-        try {
-            String data = (String) params.get("data");
-            JSONArray array = JSONArray.parseArray(data);
-            List<AttributeType> attributeTypes = new ArrayList<>();
-            for(int i=0;i<array.size();i++) {
-                JSONObject object = array.getJSONObject(i);
-                AttributeType attributeType = new AttributeType();
-                attributeType.setAttributeTypeId(object.getInteger("attributeTypeId"));
-                attributeType.setAttributeTypeName(object.getString("attributeTypeName"));
-                attributeTypes.add(attributeType);
-            }
-            boolean flag = attributeTypeService.delete(attributeTypes);
-            if(flag) {
-                return ResultUtil.success(null);
-            } else {
-                return ResultUtil.error("删除失败，数据正在被应用！");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
+    public ResultVo delete(@RequestBody Map<String,Object> params) throws Exception {
+        String data = (String) params.get("data");
+        JSONArray array = JSONArray.parseArray(data);
+        List<AttributeType> attributeTypes = new ArrayList<>();
+        for(int i=0;i<array.size();i++) {
+            JSONObject object = array.getJSONObject(i);
+            AttributeType attributeType = new AttributeType();
+            attributeType.setAttributeTypeId(object.getInteger("attributeTypeId"));
+            attributeType.setAttributeTypeName(object.getString("attributeTypeName"));
+            attributeTypes.add(attributeType);
         }
+        attributeTypeService.delete(attributeTypes);
+        return ResultUtil.success(null);
     }
 }

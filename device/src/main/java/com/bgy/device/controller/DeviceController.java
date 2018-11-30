@@ -83,25 +83,16 @@ public class DeviceController {
     }
 
     @PostMapping("/delete")
-    public ResultVo delete(@RequestBody Map<String,Object> params) {
-        try {
-            String data = (String) params.get("data");
-            JSONArray array = JSONArray.parseArray(data);
-            List<String> ids = new ArrayList<>();
-            for(int i=0;i<array.size();i++) {
-                JSONObject jsonObject = array.getJSONObject(i);
-                ids.add(jsonObject.getString("deviceId"));
-            }
-            boolean flag = deivceService.delete(ids);
-            if(!flag) {
-                return ResultUtil.error("不能删除设备，一设备被其他设备关联");
-            } else {
-                return ResultUtil.success(null);
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
+    public ResultVo delete(@RequestBody Map<String,Object> params) throws Exception {
+        String data = (String) params.get("data");
+        JSONArray array = JSONArray.parseArray(data);
+        List<String> ids = new ArrayList<>();
+        for(int i=0;i<array.size();i++) {
+            JSONObject jsonObject = array.getJSONObject(i);
+            ids.add(jsonObject.getString("deviceId"));
         }
+        deivceService.delete(ids);
+        return ResultUtil.success(null);
     }
 
     @PostMapping("/select-option")

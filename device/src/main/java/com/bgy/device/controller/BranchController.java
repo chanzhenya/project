@@ -50,28 +50,19 @@ public class BranchController {
     }
 
     @PostMapping("/delete")
-    public ResultVo delete(@RequestBody Map<String,Object> params) {
-        try {
-            String data = (String) params.get("data");
-            JSONArray array = JSONArray.parseArray(data);
-            List<Branch> branches = new ArrayList<>();
-            for(int i=0;i<array.size();i++) {
-                JSONObject jsonObject = array.getJSONObject(i);
-                Branch branch = new Branch();
-                branch.setBranchId(jsonObject.getInteger("branchId"));
-                branch.setBranchName(jsonObject.getString("branchName"));
-                branch.setBranchNo(jsonObject.getString("branchNo"));
-                branches.add(branch);
-            }
-            boolean flag = branchService.delete(branches);
-            if(flag) {
-                return ResultUtil.success(null);
-            } else {
-                return ResultUtil.error("删除失败，数据正在被应用！");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
+    public ResultVo delete(@RequestBody Map<String,Object> params) throws Exception {
+        String data = (String) params.get("data");
+        JSONArray array = JSONArray.parseArray(data);
+        List<Branch> branches = new ArrayList<>();
+        for(int i=0;i<array.size();i++) {
+            JSONObject jsonObject = array.getJSONObject(i);
+            Branch branch = new Branch();
+            branch.setBranchId(jsonObject.getInteger("branchId"));
+            branch.setBranchName(jsonObject.getString("branchName"));
+            branch.setBranchNo(jsonObject.getString("branchNo"));
+            branches.add(branch);
         }
+        branchService.delete(branches);
+        return ResultUtil.success(null);
     }
 }

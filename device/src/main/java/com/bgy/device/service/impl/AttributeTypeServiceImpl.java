@@ -31,15 +31,9 @@ public class AttributeTypeServiceImpl implements AttributeTypeService {
     }
 
     @Override
-    public boolean delete(List<AttributeType> attributeTypes) {
-        try {
-            for (AttributeType attributeType:attributeTypes) {
-                attributeTypeMapper.deleteByPrimaryKey(attributeType);
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+    public void delete(List<AttributeType> attributeTypes) throws Exception {
+        for (AttributeType attributeType:attributeTypes) {
+            attributeTypeMapper.deleteByPrimaryKey(attributeType);
         }
     }
 

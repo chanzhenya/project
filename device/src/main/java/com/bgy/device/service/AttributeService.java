@@ -13,6 +13,6 @@ public interface AttributeService {
 
     public void save(Attribute attribute);
 
-    public boolean delete(List<Integer> attributes);
+    public void delete(List<Integer> attributes) throws Exception;
 
 }

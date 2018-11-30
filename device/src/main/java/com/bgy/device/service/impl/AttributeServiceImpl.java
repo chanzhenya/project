@@ -37,15 +37,9 @@ public class AttributeServiceImpl implements AttributeService {
     }
 
     @Override
-    public boolean delete(List<Integer> ids) {
-        try {
-            for(Integer id:ids) {
-                attributeMapper.deleteByPrimaryKey(id);
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+    public void delete(List<Integer> ids) throws Exception {
+        for(Integer id:ids) {
+            attributeMapper.deleteByPrimaryKey(id);
         }
     }
 }

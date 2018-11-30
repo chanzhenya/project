@@ -17,5 +17,5 @@ public interface DeviceService {
 
     public List<Device> findAll();
 
-    public boolean delete(List<String> ids);
+    public void delete(List<String> ids) throws Exception;
 }

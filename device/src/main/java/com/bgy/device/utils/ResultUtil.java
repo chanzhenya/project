@@ -15,7 +15,7 @@ public class ResultUtil {
     public static ResultVo error(String msg) {
         ResultVo resultVo = new ResultVo();
         resultVo.setCode(500);
-        resultVo.setMsg("error");
+        resultVo.setMsg(msg);
         return resultVo;
     }
 }

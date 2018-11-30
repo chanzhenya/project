@@ -57,26 +57,17 @@ public class AttributeController {
     }
 
     @PostMapping("/delete")
-    public ResultVo delete(@RequestBody Map<String,Object> params) {
-        try {
-            String data = (String) params.get("data");
-            JSONArray jsonArray = JSONArray.parseArray(data);
-            List<Integer> ids = new ArrayList<>();
-            for(int i=0;i<jsonArray.size();i++) {
-                JSONObject object = jsonArray.getJSONObject(i);
+    public ResultVo delete(@RequestBody Map<String,Object> params) throws Exception {
+        String data = (String) params.get("data");
+        JSONArray jsonArray = JSONArray.parseArray(data);
+        List<Integer> ids = new ArrayList<>();
+        for(int i=0;i<jsonArray.size();i++) {
+            JSONObject object = jsonArray.getJSONObject(i);
 
-                Integer id = object.getInteger("attributeId");
-                ids.add(id);
-            }
-            boolean flag = attributeService.delete(ids);
-            if(flag) {
-                return ResultUtil.success(null);
-            } else {
-                return ResultUtil.error("删除失败，数据正在被应用！");
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
+            Integer id = object.getInteger("attributeId");
+            ids.add(id);
         }
+        attributeService.delete(ids);
+        return ResultUtil.success(null);
     }
 }

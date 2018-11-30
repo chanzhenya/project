@@ -31,15 +31,9 @@ public class BranchServiceImpl implements BranchService {
     }
 
     @Override
-    public boolean delete(List<Branch> branches) {
-        try {
-            for(Branch branch:branches) {
-                branchMapper.deleteByPrimaryKey(branch);
-            }
-            return true;
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
+    public void delete(List<Branch> branches) throws Exception {
+        for(Branch branch:branches) {
+            branchMapper.deleteByPrimaryKey(branch);
         }
     }
 }
