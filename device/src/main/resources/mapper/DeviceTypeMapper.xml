@@ -5,8 +5,11 @@
     <!--
       WARNING - @mbg.generated
     -->
-    <id column="type_id" jdbcType="INTEGER" property="typeId" />
-    <result column="type_code" jdbcType="VARCHAR" property="typeCode" />
+    <id column="type_code" jdbcType="VARCHAR" property="typeCode" />
     <result column="type_name" jdbcType="VARCHAR" property="typeName" />
   </resultMap>
+
+  <delete id="deleteAll">
+    delete from device_type
+  </delete>
 </mapper>

@@ -1,21 +1,26 @@
 package com.bgy.device.service;
 
+import com.alibaba.fastjson.JSONObject;
 import com.bgy.device.entity.Device;
+import com.bgy.device.entity.DeviceAndDish;
 import com.bgy.device.value.DeviceVo;
+import com.bgy.device.value.PageData;
 
 import java.util.List;
 
 public interface DeviceService {
 
-    public List<DeviceVo> findAllDetail();
+    public List<DeviceVo> findAll();
 
-    public List<Device> findPerantDevice();
+    public void updateDevice(Device device);
 
-    public void save(Device device);
+    public void delete(List<Device> devices);
 
-    public Device findOne(String id);
+    public void sync(JSONObject jsonObject) throws Exception;
 
-    public List<Device> findAll();
+    public List<DeviceAndDish> getDeviceDishList(String deviceId);
 
-    public void delete(List<String> ids) throws Exception;
+    public void deleteDeviceDish(DeviceAndDish deviceAndDish);
+
+    public void insertDeviceDish(String deviceId, String id);
 }

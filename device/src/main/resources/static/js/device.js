@@ -1,5 +1,4 @@
 $(function () {
-
     initTable();
 
     initButton();
@@ -21,12 +20,10 @@ function initTable(){
         striped: true,
         cache: false,
         clickToSelect: true,
-        uniqueId: "ID",
+        uniqueId: "deviceId",
+        pagination: true,
         columns: [{
             checkbox: true
-        }, {
-            field: 'deviceId',
-            title: '设备ID'
         }, {
             field: 'deviceName',
             title: '设备名称'
@@ -40,34 +37,148 @@ function initTable(){
             field: 'deviceTypeName',
             title: '设备类型'
         }, {
-            field: 'branchName',
-            title: '门店'
-        }, {
-            field: 'pid',
-            title: '所属设备ID'
+            field: 'pdeviceName',
+            title: '所属设备'
         }, {
             field: 'online',
-            title: '是否在线'
+            title: '是否在线/是否空闲',
+            formatter: onlineFormatter
         }, {
-            field: 'attributeName',
-            title: '附加属性名称'
+            field: 'stationType',
+            title: '工位类型',
+            formatter: stationTypeFormatter
         }, {
-            field: 'attributeValue',
-            title: '附加属性值'
+            field: 'stationPno',
+            title: '主工位号'
+        }, {
+            field: 'stationNo',
+            title: '次工位号'
+        }, {
+            field: 'positionCode',
+            title: '坐标'
+        }, {
+            field: 'operate',
+            title: '操作',
+            events: window.operateEvents,
+            formatter: operateFormatter
         }, ]
     });
 }
+
+function onlineFormatter(value, row, index) {
+    return row.online == 1?'是':'否'
+}
+
+function stationTypeFormatter(value, row, index) {
+    if(row.stationType == 0) {
+        return '非工位';
+    } else if(row.stationType == 1) {
+        return '主工位';
+    } else {
+        return '次工位';
+    }
+}
+
+function operateFormatter(value, row, index) {
+    return [
+        '<a class="like" href="javascript:void(0)" title="Like">',
+        '<i class="glyphicon glyphicon-plus icon-plus"></i>',
+        "关联菜品",
+        '</a>  '
+    ].join('')
+}
+window.operateEvents = {
+    'click .like': function (e, value, row, index) {
+        console.log("Dish Table Init");
+        $('#deviceIdInput').val(row.deviceId);
+        $('#dishSelect').val('');
+
+        $('#dish_table').bootstrapTable("destroy");
+        $('#dish_table').bootstrapTable({
+            url: ctxPath+'device/dish-list?deviceId='+row.deviceId,
+            method: 'POST',
+            striped: true,
+            cache: false,
+            uniqueId: "id",
+            columns: [{
+                field: 'dishId',
+                title: '菜品编号'
+            }, {
+                field: 'dishName',
+                title: '菜品名称'
+            }, {
+                field: 'operate',
+                title: '操作',
+                events: window.dishOperateEvents,
+                formatter: dishOperateFormatter
+            },]
+        });
+        $('#dishModal').modal();
+    }
+}
+
+
+function dishOperateFormatter(value, row, index) {
+    return [
+        '<a class="remove" href="javascript:void(0)" title="Remove">',
+        '<i class="glyphicon glyphicon-remove"></i>',
+        '</a>'
+    ].join('')
+}
+window.dishOperateEvents = {
+    'click .remove': function (e, value, row, index) {
+        $.ajax({
+            type: "post",
+            url: ctxPath+'device/dish-delete',
+            contentType: 'application/json',
+            data: JSON.stringify({"data":JSON.stringify(row)}),
+            success: function (data) {
+                if (data.code == 200) {
+                    toastr.success('提交数据成功');
+                    $("#dish_table").bootstrapTable('remove', {
+                        field: 'id',
+                        values: [row.id]
+                    });
+                }
+            },
+            error: function (data) {
+                var responseJson = data.responseJSON;
+                var msg = responseJson.msg;
+                var code = responseJson.code;
+                toastr.error(code+" "+msg);
+            },
+            complete: function () {
+
+            }
+        });
+    }
+}
+
 
 function initButton() {
 
     var postdata = {};
 
     $('#btn_add').click(function () {
-        $("#myModalLabel").text("新增");
-        $("#myModal").find(".form-control").val("");
-        $('#myModal').modal();
-        $('input:radio[name=optionsRadios]').filter('[value=1]').prop('checked',true);
-        postdata.deviceId = "";
+        $.ajax({
+            type: "post",
+            url: ctxPath+'device/sync',
+            success: function (data) {
+                if (data.code == 200) {
+                    toastr.success('数据同步成功');
+                    $("#device_table").bootstrapTable('refresh');
+                }
+            },
+            error: function (data) {
+                var responseJson = data.responseJSON;
+                var msg = responseJson.msg;
+                var code = responseJson.code;
+                toastr.error(code+" "+msg);
+            },
+            complete: function () {
+
+            }
+        });
     });
 
     $("#btn_edit").click(function () {
@@ -86,15 +197,18 @@ function initButton() {
         $("#inputDeviceName").val(arrselections[0].deviceName);
         $("#inputIp").val(arrselections[0].ip);
         $("#inputPort").val(arrselections[0].port);
-        $("#inputRemark").val(arrselections[0].remark);
-        $("#deviceTypeSelect").val(arrselections[0].deviceTypeId);
-        $("#branchSelect").val(arrselections[0].branchId);
-        $("#attributeSelect").val(arrselections[0].attributeId);
-        if(arrselections[0].pid != null) {
-            $("#deviceSelect").val(arrselections[0].pid);
-        } else {
-            $("#deviceSelect").val("");
-        }
+        $("#inputStationPno").val(arrselections[0].stationPno);
+        $("#inputStationNo").val(arrselections[0].stationNo);
+        $("#inputPositionCode").val(arrselections[0].positionCode);
+
+        $("#deviceTypeSelect").selectpicker('val',arrselections[0].deviceType);
+        $("#deviceTypeSelect").selectpicker("refresh");
+
+        $("#deviceSelect").selectpicker('val',arrselections[0].pid);
+        $("#deviceSelect").selectpicker('refresh');
+
+        $("#stationSelect").selectpicker('val',arrselections[0].stationType);
+        $("#stationSelect").selectpicker("refresh");
 
         if(arrselections[0].online == 1) {
             $('input:radio[name=optionsRadios]').filter('[value=1]').prop('checked',true);
@@ -104,7 +218,7 @@ function initButton() {
 
         postdata.deviceId = arrselections[0].deviceId;
         $('#myModal').modal();
-    });
+});
 
     $("#btn_delete").click(function () {
         var arrselections = $("#device_table").bootstrapTable('getSelections');
@@ -127,8 +241,11 @@ function initButton() {
                     $("#device_table").bootstrapTable('refresh');
                 }
             },
-            error: function () {
-                toastr.error('Error');
+            error: function (data) {
+                var responseJson = data.responseJSON;
+                var msg = responseJson.msg;
+                var code = responseJson.code;
+                toastr.error(code+" "+msg);
             },
             complete: function () {
 
@@ -142,11 +259,13 @@ function initButton() {
         postdata.ip = $("#inputIp").val();
         postdata.port = $("#inputPort").val();
         postdata.online = $('input[name="optionsRadios"]:checked').val();
-        postdata.branchId = $("#branchSelect").val();
-        postdata.deviceTypeId = $("#deviceTypeSelect").val();
+        postdata.deviceType = $("#deviceTypeSelect").val();
         postdata.pid = $("#deviceSelect").val();
-        postdata.attributeId=$("#attributeSelect").val();
-        if(postdata.deviceName=="" || postdata.ip=="" || postdata.port == "" || postdata.online == "" || postdata.branchId == "" || postdata.deviceTypeId == "") {
+        postdata.stationType=$("#stationSelect").val();
+        postdata.stationPno=$("#inputStationPno").val();
+        postdata.stationNo=$("#inputStationNo").val();
+        postdata.positionCode=$("#inputPositionCode").val();
+        if(postdata.deviceName=="" || postdata.ip=="" || postdata.port == "" || postdata.online == "" || postdata.branchId == "" || postdata.deviceTypeId == "" || postdata.stationType == "") {
             toastr.error("请完成'*'必填数据的输入");
             return;
         }
@@ -159,17 +278,49 @@ function initButton() {
                 if (data.code == 200) {
                     toastr.success('提交数据成功');
                     $("#device_table").bootstrapTable('refresh');
-                } else {
-                    toastr.error(data.msg);
                 }
             },
-            error: function () {
-                toastr.error('Error');
+            error: function (data) {
+                var responseJson = data.responseJSON;
+                var msg = responseJson.msg;
+                var code = responseJson.code;
+                toastr.error(code+" "+msg);
             },
             complete: function () {
 
             }
 
+        });
+    });
+
+    $("#dish_btn_submit").click(function () {
+        var deviceId = $('#deviceIdInput').val();
+        var id = $('#dishSelect').val();
+        var data = {
+            'id':id,
+            'deviceId':deviceId
+        };
+
+        $.ajax({
+            type: "post",
+            url: ctxPath+"device/dish-submit",
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: function (data) {
+                if (data.code == 200) {
+                    toastr.success('提交数据成功');
+                    $("#dish_table").bootstrapTable('refresh');
+                }
+            },
+            error: function (data) {
+                var responseJson = data.responseJSON;
+                var msg = responseJson.msg;
+                var code = responseJson.code;
+                toastr.error(code+" "+msg);
+            },
+            complete: function () {
+
+            }
         });
     });
 }
@@ -180,49 +331,52 @@ function initSelect() {
         type: 'POST',
         success: function (data) {
             var result = data.data;
-            var branches = result.branches;
-            initBranch(branches);
 
-            var devices = result.devices;
+            var devices = result.deviceSelection
             initDevice(devices);
 
-            var deviceTypes = result.deviceTypes;
+            var deviceTypes = result.deviceTypeSelection;
             initDeviceType(deviceTypes);
 
-            var attributes = result.attributes;
-            initAttribute(attributes);
+            var dishes = result.dishSelection;
+            initDish(dishes);
         }
     });
-}
-
-function initBranch(obj) {
-    var html='';
-    $.each(obj,function (index,item) {
-        html += '<option value="'+item.branchId+'">' + item.branchName + '</option>';
-    });
-    $("#branchSelect").html(html);
 }
 
 function initDevice(obj) {
     var html='<option value=""></option>';
     $.each(obj,function (index,item) {
-        html += '<option value="'+item.deviceId+'">' + item.deviceId + ' - ' + item.deviceName + '</option>';
+        html += '<option value="'+item.deviceId+'">' + item.deviceName + '</option>';
     });
-    $("#deviceSelect").html(html);
+    $("#deviceSelect").selectpicker({
+        noneSelectedText : '请选择'
+    });
+    $("#deviceSelect").append(html);
+    $("#deviceSelect").selectpicker('refresh');
 }
 
 function initDeviceType(obj) {
-    var html='';
-    $.each(obj,function (index,item) {
-        html += '<option value="'+item.typeId+'">' + item.typeCode + '-' + item.typeName + '</option>';
-    });
-    $("#deviceTypeSelect").html(html);
-}
-
-function initAttribute(obj) {
     var html='<option value=""></option>';
     $.each(obj,function (index,item) {
-        html += '<option value="'+item.attributeId+'">' + item.attributeName + ' - ' + item.attributeValue + '</option>';
+        html += '<option value="'+item.typeCode+'">' + item.typeName + '</option>';
     });
-    $("#attributeSelect").html(html);
+    $("#deviceTypeSelect").selectpicker({
+        noneSelectedText : '请选择'
+    });
+    $("#deviceTypeSelect").append(html);
+    $("#deviceTypeSelect").selectpicker('refresh');
+}
+
+function initDish(obj) {
+    var html='<option value=""></option>';
+    $.each(obj,function (index,item) {
+        html += '<option value="'+item.id+'">' + item.productName + '</option>';
+    });
+
+    $("#dishSelect").selectpicker({
+        noneSelectedText : '请选择'
+    });
+    $("#dishSelect").append(html);
+    $("#dishSelect").selectpicker('refresh');
 }

@@ -5,12 +5,14 @@ import com.bgy.device.mapper.DeviceTypeMapper;
 import com.bgy.device.service.DeviceTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
+/**
+ * @author Judith
+ * @date 2018/12/13
+ */
 @Service
-@Transactional
 public class DeviceTypeServiceImpl implements DeviceTypeService {
 
     @Autowired
@@ -19,21 +21,5 @@ public class DeviceTypeServiceImpl implements DeviceTypeService {
     @Override
     public List<DeviceType> findAll() {
         return deviceTypeMapper.selectAll();
-    }
-
-    @Override
-    public void save(DeviceType deviceType) {
-        if(deviceType.getTypeId() != null) {
-            deviceTypeMapper.updateByPrimaryKeySelective(deviceType);
-        } else {
-            deviceTypeMapper.insert(deviceType);
-        }
-    }
-
-    @Override
-    public void delete(List<DeviceType> deviceTypes) throws Exception {
-        for(DeviceType type:deviceTypes) {
-            deviceTypeMapper.deleteByPrimaryKey(type);
-        }
     }
 }

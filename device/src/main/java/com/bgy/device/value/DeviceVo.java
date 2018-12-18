@@ -2,12 +2,16 @@ package com.bgy.device.value;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
+/**
+ * @author Judith
+ * @date 2018/12/13
+ */
 @Data
-public class DeviceVo {
+public class DeviceVo implements Serializable {
 
     private String deviceId;
-
-    private Integer index;
 
     private String deviceName;
 
@@ -17,23 +21,21 @@ public class DeviceVo {
 
     private String pid;
 
+    private String pdeviceName;
+
     private Integer online;
 
-    private Integer branchId;
+    private String branchId;
 
-    private String branchName;
-
-    private String branchNo;
-
-    private Integer deviceTypeId;
+    private String deviceType;
 
     private String deviceTypeName;
 
-    private String deviceTypeCode;
+    private Integer stationType;
 
-    private String attributeId;
+    private Integer stationNo;
 
-    private String attributeName;
+    private Integer stationPno;
 
-    private String attributeValue;
+    private String positionCode;
 }

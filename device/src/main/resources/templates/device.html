@@ -14,6 +14,9 @@
     <link href="static/toastr/toastr.css" rel="stylesheet" media="screen"/>
     <script th:src="@{static/toastr/toastr.js}"></script>
     <link href="static/css/device.css" rel="stylesheet" media="screen"/>
+
+    <link href="static/css/bootstrap-select.css" rel="stylesheet" media="screen"/>
+    <script th:src="@{static/js/bootstrap-select.js}"></script>
     <title></title>
 </head>
 <body>
@@ -21,7 +24,7 @@
         <div class="panelBar" th:replace="head::headBar"></div>
         <div id="toolbar" class="btn-group">
             <button id="btn_add" type="button" class="btn btn-default">
-                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>同步
             </button>
             <button id="btn_edit" type="button" class="btn btn-default">
                 <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
@@ -43,70 +46,113 @@
                 </div>
                 <div class="modal-body">
 
-                    <div class="control-group">
-                        <label class="control-label require-label" for="inputDeviceName">设备名称</label>
-                        <div class="controls">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label require-label" for="inputDeviceName" style="width: 20%">设备名称</label>
+                        <div class="controls" style="width: 80%">
                             <input type="text" id="inputDeviceName" class="form-control"/>
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label require-label" for="inputIp" >IP地址</label>
-                        <div class="controls">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label require-label" for="inputIp" style="width: 20%">IP地址</label>
+                        <div class="controls" style="width: 50%">
                             <input type="text" id="inputIp" class="form-control"/>
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label require-label" for="inputPort">端口号</label>
-                        <div class="controls">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label require-label" for="inputPort" style="width: 20%">端口号</label>
+                        <div class="controls" style="width: 50%">
                             <input type="text" id="inputPort" class="form-control"/>
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label require-label" for="deviceTypeSelect">设备类型</label>
-                        <div class="controls">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label require-label" for="deviceTypeSelect" style="width: 20%">设备类型</label>
+                        <div class="controls" style="width: 50%">
                             <select class="selectpicker show-tick form-control" id="deviceTypeSelect">
                             </select>
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label" for="deviceSelect">所属设备</label>
-                        <div class="controls">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label" for="deviceSelect" style="width: 20%">所属设备</label>
+                        <div class="controls" style="width: 50%">
                             <select class="selectpicker show-tick form-control" id="deviceSelect">
                             </select>
                         </div>
                     </div>
 
-                    <div class="control-group">
-                        <label class="control-label require-label" for="branchSelect">门店</label>
-                        <div class="controls">
-                            <select class="selectpicker show-tick form-control" id="branchSelect">
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label" for="attributeSelect">附加属性</label>
-                        <div class="controls">
-                            <select class="selectpicker show-tick form-control" id="attributeSelect">
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="control-group">
-                        <label class="control-label require-label">是否在线</label>
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label require-label" style="width: 20%">是否在线/空闲</label>
                         <div class="controls">
                             <input type="radio" name="optionsRadios" id="online" value="1" checked>是
                             <input type="radio" name="optionsRadios" id="offline" value="0">否
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label require-label" for="stationSelect" style="width: 20%">工位类型</label>
+                        <div class="controls" style="width: 50%">
+                            <select class="selectpicker show-tick form-control" id="stationSelect">
+                                <option value="0">非工位</option>
+                                <option value="1">主工位</option>
+                                <option value="2">次工位</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label" for="inputStationPno" style="width: 20%">主工位号</label>
+                        <div class="controls" style="width: 50%">
+                            <input type="text" id="inputStationPno" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label" for="inputStationNo" style="width: 20%">次工位号</label>
+                        <div class="controls" style="width: 50%">
+                            <input type="text" id="inputStationNo" class="form-control"/>
+                        </div>
+                    </div>
+
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <label class="control-label" for="inputPositionCode" style="width: 20%">餐桌坐标</label>
+                        <div class="controls" style="width: 50%">
+                            <input type="text" id="inputPositionCode" class="form-control"/>
                         </div>
                     </div>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button type="button" class="btn btn-primary" id="btn_submit">提交</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal -->
+    </div>
+
+    <div class="modal fade" id="dishModal" tabindex="-1" role="dialog" aria-labelledby="dishModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="dishModalLabel">菜品关联</h4>
+                </div>
+                <div class="modal-body">
+                    <table id="dish_table"></table>
+
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding-top: 20px">
+                        <label class="control-label" for="dishSelect" style="width: 20%">菜品</label>
+                        <div class="controls" style="width: 80%">
+                            <select class="selectpicker show-tick form-control" id="dishSelect">
+                            </select>
+                        </div>
+                    </div>
+                    <input hidden id="deviceIdInput"/>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary" id="dish_btn_submit">新增</button>
                 </div>
             </div><!-- /.modal-content -->
         </div><!-- /.modal -->

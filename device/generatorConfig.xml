@@ -13,7 +13,7 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/device"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/device"
                         userId="root"
                         password="root">
         </jdbcConnection>
@@ -26,9 +26,10 @@
                              targetProject="src/main/java"/>
 
         <table tableName="device"></table>
-        <table tableName="attribute"></table>
-        <table tableName="attribute_type"></table>
-        <table tableName="branch"></table>
+        <table tableName="device_and_dish"></table>
+        <table tableName="device_and_table"></table>
+        <table tableName="dish_product_relation"></table>
         <table tableName="device_type"></table>
+        <table tableName="table_info"></table>
     </context>
 </generatorConfiguration>

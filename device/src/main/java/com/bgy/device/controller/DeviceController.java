@@ -2,20 +2,22 @@ package com.bgy.device.controller;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.bgy.device.entity.Attribute;
-import com.bgy.device.entity.Branch;
+import com.bgy.device.common.CommonCoreContent;
 import com.bgy.device.entity.Device;
+import com.bgy.device.entity.DeviceAndDish;
 import com.bgy.device.entity.DeviceType;
-import com.bgy.device.service.AttributeService;
-import com.bgy.device.service.BranchService;
+import com.bgy.device.entity.DishProductRelation;
 import com.bgy.device.service.DeviceService;
 import com.bgy.device.service.DeviceTypeService;
+import com.bgy.device.service.DishService;
 import com.bgy.device.utils.ResultUtil;
 import com.bgy.device.value.DeviceVo;
 import com.bgy.device.value.ResultVo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -26,92 +28,163 @@ import java.util.Map;
 @RequestMapping("/device")
 public class DeviceController {
 
+    private RestTemplate restTemplate = new RestTemplate();
+
     @Autowired
     private DeviceService deivceService;
 
     @Autowired
-    private BranchService branchService;
+    private DishService dishService;
 
     @Autowired
     private DeviceTypeService deviceTypeService;
 
-    @Autowired
-    private AttributeService attributeService;
-
-    @ResponseBody
     @PostMapping("/list")
-    public ResultVo list() {
-        try {
-         List<DeviceVo> deviceList = deivceService.findAllDetail();
-         return ResultUtil.success(deviceList);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
-        }
-    }
-
-    @PostMapping("/submit")
-    public ResultVo submit(@RequestBody Map<String,Object> params) {
-        try {
-            String branchId = (String) params.get("branchId");
-            String deviceTypeId = (String) params.get("deviceTypeId");
-            String attributeId = (String) params.get("attributeId");
-
-            Device device = new Device();
-            device.setDeviceName((String) params.get("deviceName"));
-            device.setIp((String) params.get("ip"));
-            device.setOnline(Integer.valueOf((String) params.get("online")));
-            device.setPort(Integer.valueOf((String) params.get("port")));
-            if(StringUtils.isNotBlank(branchId)) {
-                device.setBranchId(Integer.valueOf(branchId));
-            }
-            device.setPid((String) params.get("pid"));
-            if(StringUtils.isNotBlank(deviceTypeId)) {
-                device.setDeviceTypeId(Integer.valueOf(deviceTypeId));
-            }
-            if(StringUtils.isNotBlank(attributeId)) {
-                device.setAttributeId(Integer.valueOf(attributeId));
-            }
-            device.setDeviceId((String) params.get("deviceId"));
-
-            deivceService.save(device);
-            return ResultUtil.success(null);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
-        }
-    }
-
-    @PostMapping("/delete")
-    public ResultVo delete(@RequestBody Map<String,Object> params) throws Exception {
-        String data = (String) params.get("data");
-        JSONArray array = JSONArray.parseArray(data);
-        List<String> ids = new ArrayList<>();
-        for(int i=0;i<array.size();i++) {
-            JSONObject jsonObject = array.getJSONObject(i);
-            ids.add(jsonObject.getString("deviceId"));
-        }
-        deivceService.delete(ids);
-        return ResultUtil.success(null);
+    public ResultVo list(@RequestParam(value = "pageNum",required = false,defaultValue = "1") int pageNum,
+                         @RequestParam(value = "pageSize",required = false,defaultValue = "10") int pageSize) {
+        //PageData pageData = deivceService.findBypage(pageNum,pageSize);
+        List<DeviceVo> devices = deivceService.findAll();
+        return ResultUtil.success(devices);
     }
 
     @PostMapping("/select-option")
     public ResultVo selectOption() {
-        try {
-            Map<String,Object> data = new HashMap<>();
-            List<Branch> branches = branchService.findAll();
-            List<DeviceType> deviceTypes = deviceTypeService.findAll();
-            List<Device> devices = deivceService.findPerantDevice();
-            List<Attribute> attributes = attributeService.findAll();
+        List<DeviceVo> devices = deivceService.findAll();
+        List<DishProductRelation> dishes = dishService.findAll();
+        List<DeviceType> deviceTypes = deviceTypeService.findAll();
+        Map<String,Object> data = new HashMap<>();
+        data.put("deviceSelection",devices);
+        data.put("dishSelection",dishes);
+        data.put("deviceTypeSelection",deviceTypes);
+        return ResultUtil.success(data);
+    }
 
-            data.put("branches",branches);
-            data.put("deviceTypes",deviceTypes);
-            data.put("devices",devices);
-            data.put("attributes",attributes);
-            return ResultUtil.success(data);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return ResultUtil.error(e.getMessage());
+    @PostMapping("/submit")
+    public ResultVo save(@RequestBody Map<String,Object> params) {
+
+        Device device = initParam(params);
+
+        deivceService.updateDevice(device);
+        return ResultUtil.success(null);
+    }
+
+    @PostMapping("/delete")
+    public ResultVo delete(@RequestBody Map<String,Object> params) {
+        String data = (String) params.get("data");
+        JSONArray array = JSONArray.parseArray(data);
+        List<Device> deviceList = new ArrayList<>();
+        for(int i=0;i<array.size();i++) {
+            JSONObject jsonObject = array.getJSONObject(i);
+            Device device = initParam(jsonObject);
+            deviceList.add(device);
         }
+        deivceService.delete(deviceList);
+        return ResultUtil.success(null);
+    }
+
+    @PostMapping("/sync")
+    public ResultVo sync() throws Exception {
+        Map<String,Object> params = new JSONObject();
+        params.put("branchId", CommonCoreContent.BRANCH_ID);
+        ResponseEntity<JSONObject> responseEntity = restTemplate.postForEntity(CommonCoreContent.SYNC_URL,params,JSONObject.class);
+        JSONObject result = responseEntity.getBody();
+        deivceService.sync(result);
+        return ResultUtil.success(result);
+    }
+
+    @PostMapping("/dish-list")
+    public ResultVo dishList(@RequestParam("deviceId")String deviceId) {
+        List<DeviceAndDish> dishes = deivceService.getDeviceDishList(deviceId);
+        return ResultUtil.success(dishes);
+    }
+
+    @PostMapping("/dish-submit")
+    public ResultVo submitDeviceDish(@RequestBody Map<String,Object> params) {
+        String id = (String) params.get("id");
+        String deviceId = (String) params.get("deviceId");
+
+        deivceService.insertDeviceDish(deviceId,id);
+        return ResultUtil.success(null);
+    }
+
+    @PostMapping("/dish-delete")
+    public ResultVo deleteDeviceDish(@RequestBody Map<String,Object> params) {
+        String data = (String) params.get("data");
+        JSONObject jsonObject = JSONObject.parseObject(data);
+        DeviceAndDish dish = new DeviceAndDish();
+        dish.setId(jsonObject.getString("idx"));
+        dish.setDeviceId(jsonObject.getString("deviceId"));
+        dish.setDishName(jsonObject.getString("dishName"));
+        dish.setDishId(jsonObject.getString("dishId"));
+        deivceService.deleteDeviceDish(dish);
+        return ResultUtil.success(null);
+    }
+
+    private Device initParam(Map<String,Object> params) {
+        String deviceId = (String) params.get("deviceId");
+        String deviceName = (String) params.get("deviceName");
+        String ip = (String) params.get("ip");
+        String port = (String) params.get("port");
+        String deviceType = (String) params.get ("deviceType");
+        String pid = (String) params.get("pid");
+        String online = (String) params.get("online");
+        String stationType = (String) params.get("stationType");
+        String stationPno = (String) params.get("stationPno");
+        String stationNo = (String) params.get("stationNo");
+        String positionCode = (String) params.get("positionCode");
+
+        Device device = new Device();
+        if(StringUtils.isNotBlank(deviceId)) {
+            device.setDeviceId(deviceId);
+        }
+        if(StringUtils.isNotBlank(deviceName)) {
+            device.setDeviceName(deviceName);
+        }
+        if(StringUtils.isNotBlank(ip)) {
+            device.setIp(ip);
+        }
+        if(StringUtils.isNotBlank(port)) {
+            device.setPort(Integer.valueOf(port));
+        }
+        if(StringUtils.isNotBlank(deviceType)) {
+            device.setDeviceType(deviceType);
+        }
+        if(StringUtils.isNotBlank(pid)) {
+            device.setPid(pid);
+        }
+        if(StringUtils.isNotBlank(online)) {
+            device.setOnline(Integer.valueOf(online));
+        }
+        if(StringUtils.isNotBlank(stationType)) {
+            device.setStationType(Integer.valueOf(stationType));
+        }
+        if(StringUtils.isNotBlank(stationPno)) {
+            device.setStationPno(Integer.valueOf(stationPno));
+        }
+        if (StringUtils.isNotBlank(stationNo)) {
+            device.setStationNo(Integer.valueOf(stationNo));
+        }
+        if (StringUtils.isNotBlank(positionCode)) {
+            device.setPositionCode(positionCode);
+        }
+
+        return device;
+    }
+
+    private Device initParam(JSONObject params) {
+        Device device = new Device();
+        device.setDeviceId(params.getString("deviceId"));
+        device.setDeviceName(params.getString("deviceName"));
+        device.setIp(params.getString("ip"));
+        device.setPort(params.getInteger("port"));
+        device.setDeviceType(params.getString("deviceType"));
+        device.setPid(params.getString("pid"));
+        device.setOnline(params.getInteger("online"));
+        device.setStationType(params.getInteger("stationType"));
+        device.setStationPno(params.getInteger("stationPno"));
+        device.setStationNo(params.getInteger("stationNo"));
+        device.setPositionCode(params.getString("positionCode"));
+
+        return device;
     }
 }

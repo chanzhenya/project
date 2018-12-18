@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ViewController {
 
-    @GetMapping("/device")
+    @GetMapping({"/","/device"})
     public String device() {
         return "device";
     }
@@ -16,18 +16,13 @@ public class ViewController {
         return "device-type";
     }
 
-    @GetMapping("/branch")
-    public String branch() {
-        return "branch";
+    @GetMapping("/table")
+    public String table(){
+        return "table";
     }
 
-    @GetMapping("/attribute-type")
-    public String attributeType() {
-        return "attribute-type";
-    }
-
-    @GetMapping("/attribute")
-    public String attribute() {
-        return "attribute";
+    @GetMapping("/dish")
+    public String dish() {
+        return "dish";
     }
 }

@@ -2,14 +2,12 @@ $(function () {
 
     initTable();
 
-    initButton();
-
     initHead();
 });
 
 function initHead() {
-    $("#myTab li").eq(1).addClass("active");
-    $("#myTab li").eq(1).siblings().removeClass("active");
+    $("#myTab li").eq(3).addClass("active");
+    $("#myTab li").eq(3).siblings().removeClass("active");
 }
 
 function initTable(){
@@ -24,14 +22,11 @@ function initTable(){
         columns: [{
             checkbox: true
         }, {
-            field: 'typeId',
-            title: 'ID'
+            field: 'typeCode',
+            title: '设备类型编号'
         }, {
             field: 'typeName',
             title: '设备类型名称'
-        }, {
-            field: 'typeCode',
-            title: '设备类型编号'
         }, ]
     });
 }

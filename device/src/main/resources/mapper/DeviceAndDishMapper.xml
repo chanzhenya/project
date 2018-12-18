@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bgy.device.mapper.DeviceAndDishMapper">
+  <resultMap id="BaseResultMap" type="com.bgy.device.entity.DeviceAndDish">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="device_id" jdbcType="VARCHAR" property="deviceId" />
+    <result column="dish_id" jdbcType="VARCHAR" property="dishId" />
+    <result column="dish_name" jdbcType="VARCHAR" property="dishName" />
+  </resultMap>
+
+  <select id="findByDevice" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select * from device_and_dish where device_id = #{deviceId}
+  </select>
+
+  <delete id="deleteByDevice" parameterType="java.lang.String">
+    delete from device_and_dish where device_id = #{deviceId}
+  </delete>
+
+  <insert id="insertOne" parameterType="com.bgy.device.entity.DeviceAndDish">
+    insert into device_and_dish
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="deviceId != null">
+        device_id,
+      </if>
+      <if test="dishId != null">
+        dish_id,
+      </if>
+      <if test="dishName != null">
+        dish_name,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="deviceId != null">
+        #{deviceId,jdbcType=VARCHAR},
+      </if>
+      <if test="dishId != null">
+        #{dishId,jdbcType=VARCHAR},
+      </if>
+      <if test="dishName != null">
+        #{dishName, jdbcType=VARCHAR}
+      </if>
+    </trim>
+  </insert>
+
+  <delete id="deleteAll">
+    delete from device_and_dish
+  </delete>
+</mapper>

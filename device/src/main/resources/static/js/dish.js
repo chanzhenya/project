@@ -3,35 +3,33 @@ $(function () {
 
     initButton();
 
-    initSelect();
-
     initHead();
 });
 
 function initHead() {
-    $("#myTab li").eq(3).addClass("active").siblings().removeClass("active");
+    $("#myTab li").eq(2).addClass("active").siblings().removeClass("active");
 }
 
 function initTable(){
-    $('#attribute_table').bootstrapTable({
-        url: ctxPath+'attribute/list',
+    $('#dish_table').bootstrapTable({
+        url: ctxPath+'dish/list',
         method: 'POST',
         toolbar: 'toolbar',
         striped: true,
         cache: false,
         clickToSelect: true,
-        uniqueId: "ID",
+        uniqueId: "id",
         columns: [{
             checkbox: true
         }, {
-            field: 'attributeName',
-            title: '属性名称'
+            field: 'productId',
+            title: '菜品ID'
         }, {
-            field: 'attributeValue',
-            title: '属性值'
+            field: 'productName',
+            title: '菜品名称'
         }, {
-            field: 'attributeTypeName',
-            title: '属性类型名称'
+            field: 'dishId',
+            title: '菜品编号'
         }, ]
     });
 }
@@ -40,16 +38,16 @@ function initButton() {
 
     var postdata = {};
 
-    $('#btn_add').click(function () {
-        $("#myModalLabel").text("新增");
-        $("#myModal").find(".form-control").val("");
-        $('#myModal').modal();
-        $("#attributeTypeSelect").val("");
-        postdata.attributeId=null;
-    });
+    // $('#btn_add').click(function () {
+    //     $("#myModalLabel").text("新增");
+    //     $("#myModal").find(".form-control").val("");
+    //     $('#myModal').modal();
+    //     $("#attributeTypeSelect").val("");
+    //     postdata.attributeId=null;
+    // });
 
     $("#btn_edit").click(function () {
-        var arrselections = $("#attribute_table").bootstrapTable('getSelections');
+        var arrselections = $("#dish_table").bootstrapTable('getSelections');
         if (arrselections.length > 1) {
             toastr.warning('只能选择一行进行编辑');
 
@@ -61,16 +59,15 @@ function initButton() {
             return;
         }
         $("#myModalLabel").text("编辑");
-        $("#inputAttributeName").val(arrselections[0].attributeName);
-        $("#inputAttributeValue").val(arrselections[0].attributeValue)
-        $("#attributeTypeSelect").val(arrselections[0].attributeTypeId);
+        $("#inputDishName").val(arrselections[0].productName);
+        $("#inputDishId").val(arrselections[0].dishId)
 
-        postdata.attributeId = arrselections[0].attributeId;
+        postdata.id = arrselections[0].id;
         $('#myModal').modal();
     });
 
     $("#btn_delete").click(function () {
-        var arrselections = $("#attribute_table").bootstrapTable('getSelections');
+        var arrselections = $("#dish_table").bootstrapTable('getSelections');
         if (arrselections.length <= 0) {
             toastr.warning('请选择有效数据');
             return;
@@ -81,13 +78,13 @@ function initButton() {
         }
         $.ajax({
             type: "post",
-            url: ctxPath+'attribute/delete',
+            url: ctxPath+'dish/delete',
             contentType: 'application/json',
             data: JSON.stringify({"data":JSON.stringify(arrselections)}),
             success: function (data) {
                 if (data.code == 200) {
                     toastr.success('提交数据成功');
-                    $("#attribute_table").bootstrapTable('refresh');
+                    $("#dish_table").bootstrapTable('refresh');
                 }
             },
             error: function () {
@@ -101,19 +98,17 @@ function initButton() {
     });
 
     $("#btn_submit").click(function () {
-        postdata.attributeName = $("#inputAttributeName").val();
-        postdata.attributeValue = $("#inputAttributeValue").val();
-        postdata.attributeTypeId = $("#attributeTypeSelect").val();
-        postdata.attributeTypeName = $("#attributeTypeSelect").text;
+        postdata.dishId = $("#inputDishId").val();
+        postdata.productName = $("#inputDishName").val();
         $.ajax({
             type: "post",
-            url: ctxPath+"attribute/save",
+            url: ctxPath+"dish/save",
             contentType: 'application/json',
             data: JSON.stringify(postdata),
             success: function (data) {
                 if (data.code == 200) {
                     toastr.success('提交数据成功');
-                    $("#attribute_table").bootstrapTable('refresh');
+                    $("#dish_table").bootstrapTable('refresh');
                 } else {
                     toastr.error(data.msg);
                 }
@@ -126,21 +121,5 @@ function initButton() {
             }
 
         });
-    });
-}
-
-function initSelect() {
-    $.ajax({
-        url:ctxPath+"attribute-type/list",
-        type: 'POST',
-        success: function (data) {
-            var deviceType='<option value=""></option>';
-            var result = data.data;
-            $.each(result, function(index, item) {
-                deviceType += '<option value="'+item.attributeTypeId+'">' + item.attributeTypeName + '</option>';
-            });
-            $('#attributeTypeSelect').html(deviceType);
-
-        }
     });
 }

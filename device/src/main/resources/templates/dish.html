@@ -18,10 +18,11 @@
 <body>
 <div class="container">
     <div class="panelBar" th:replace="head::headBar"></div>
+
     <div id="toolbar" class="btn-group">
-        <button id="btn_add" type="button" class="btn btn-default">
-            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
-        </button>
+        <!--<button id="btn_add" type="button" class="btn btn-default">-->
+            <!--<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增-->
+        <!--</button>-->
         <button id="btn_edit" type="button" class="btn btn-default">
             <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
         </button>
@@ -29,7 +30,7 @@
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
         </button>
     </div>
-    <table id="branch_table">
+    <table id="dish_table">
     </table>
 </div>
 
@@ -41,17 +42,18 @@
                 <h4 class="modal-title" id="myModalLabel">模态框（Modal）标题</h4>
             </div>
             <div class="modal-body">
+
                 <div class="control-group">
-                    <label class="control-label" for="inputBranchName">门店名称</label>
+                    <label class="control-label" for="inputDishName">菜品名称</label>
                     <div class="controls">
-                        <input type="text" id="inputBranchName" class="form-control"/>
+                        <input type="text" id="inputDishName" class="form-control"/>
                     </div>
                 </div>
 
                 <div class="control-group">
-                    <label class="control-label" for="inputBranchNo">门店编号</label>
+                    <label class="control-label" for="inputDishId">菜品编号</label>
                     <div class="controls">
-                        <input type="text" id="inputBranchNo" class="form-control"/>
+                        <input type="text" id="inputDishId" class="form-control"/>
                     </div>
                 </div>
             </div>
@@ -68,5 +70,5 @@
     ctxPath = /*[[@{/}]]*/ '';
     /*]]>*/
 </script>
-<script th:src="@{static/js/branch.js}"></script>
+<script th:src="@{static/js/dish.js}"></script>
 </html>

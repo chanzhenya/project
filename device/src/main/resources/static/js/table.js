@@ -2,32 +2,33 @@ $(function () {
     initTable();
     initHead();
     initButton();
+    initSelect();
 });
 
 function initHead() {
-    $("#myTab li").eq(2).addClass("active").siblings().removeClass("active");
+    $("#myTab li").eq(1).addClass("active").siblings().removeClass("active");
 }
 
 function initTable(){
     $('#branch_table').bootstrapTable({
-        url: ctxPath+'branch/list',
+        url: ctxPath+'table/list',
         method: 'POST',
         toolbar: 'toolbar',
         striped: true,
         cache: false,
         clickToSelect: true,
-        uniqueId: "ID",
+        uniqueId: "tableId",
         columns: [{
             checkbox: true
         }, {
-            field: 'branchId',
-            title: 'ID'
+            field: 'tableName',
+            title: '餐桌名称'
         }, {
-            field: 'branchName',
-            title: '门店名称'
+            field: 'positionCode',
+            title: '餐桌坐标'
         }, {
-            field: 'branchNo',
-            title: '门店编号'
+            field: 'deviceName',
+            title: '设备'
         }, ]
     });
 }
@@ -36,12 +37,12 @@ function initButton() {
 
     var postdata = {};
 
-    $('#btn_add').click(function () {
-        $("#myModalLabel").text("新增");
-        $("#myModal").find(".form-control").val("");
-        $('#myModal').modal();
-        postdata.branchId=null;
-    });
+    // $('#btn_add').click(function () {
+    //     $("#myModalLabel").text("新增");
+    //     $("#myModal").find(".form-control").val("");
+    //     $('#myModal').modal();
+    //     postdata.branchId=null;
+    // });
 
     $("#btn_edit").click(function () {
         var arrselections = $("#branch_table").bootstrapTable('getSelections');
@@ -56,10 +57,13 @@ function initButton() {
             return;
         }
         $("#myModalLabel").text("编辑");
-        $("#inputBranchName").val(arrselections[0].branchName);
-        $("#inputBranchNo").val(arrselections[0].branchNo);
+        $("#inputTableName").val(arrselections[0].tableName);
+        $("#inputPositionCode").val(arrselections[0].positionCode);
 
-        postdata.branchId = arrselections[0].branchId;
+        $("#deviceSelect").selectpicker('val',arrselections[0].deviceId);
+        $("#deviceSelect").selectpicker('refresh');
+
+        postdata.tableId = arrselections[0].tableId;
         $('#myModal').modal();
     });
 
@@ -75,7 +79,7 @@ function initButton() {
         }
         $.ajax({
             type: "post",
-            url: ctxPath+'branch/delete',
+            url: ctxPath+'table/delete',
             contentType: 'application/json',
             data: JSON.stringify({"data":JSON.stringify(arrselections)}),
             success: function (data) {
@@ -95,11 +99,12 @@ function initButton() {
     });
 
     $("#btn_submit").click(function () {
-        postdata.branchName = $("#inputBranchName").val();
-        postdata.branchNo = $("#inputBranchNo").val();
+        postdata.tableName = $("#inputTableName").val();
+        postdata.positionCode = $("#inputPositionCode").val();
+        postdata.deviceId =  $("#deviceSelect").val();
         $.ajax({
             type: "post",
-            url: ctxPath+"branch/save",
+            url: ctxPath+"table/save",
             contentType: 'application/json',
             data: JSON.stringify(postdata),
             success: function (data) {
@@ -119,4 +124,29 @@ function initButton() {
 
         });
     });
+}
+
+function initSelect() {
+    $.ajax({
+        url:ctxPath+"device/select-option",
+        type: 'POST',
+        success: function (data) {
+            var result = data.data;
+
+            var devices = result.deviceSelection
+            initDevice(devices);
+        }
+    });
+}
+
+function initDevice(obj) {
+    var html='<option value=""></option>';
+    $.each(obj,function (index,item) {
+        html += '<option value="'+item.deviceId+'">' + item.deviceId + ' - ' + item.deviceName + '</option>';
+    });
+    $("#deviceSelect").selectpicker({
+        noneSelectedText : '请选择'
+    });
+    $("#deviceSelect").append(html);
+    $("#deviceSelect").selectpicker('refresh');
 }

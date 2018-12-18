@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bgy.device.mapper.DishProductRelationMapper">
+  <resultMap id="BaseResultMap" type="com.bgy.device.entity.DishProductRelation">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="dish_id" jdbcType="VARCHAR" property="dishId" />
+    <result column="product_id" jdbcType="VARCHAR" property="productId" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+  </resultMap>
+
+  <select id="findByDishId" parameterType="java.lang.String" resultMap="BaseResultMap">
+    SELECT * FROM `dish_product_relation` WHERE dish_id = #{dishId}
+  </select>
+
+  <delete id="deleteAll">
+    delete from `dish_product_relation`
+  </delete>
+</mapper>

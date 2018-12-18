@@ -8,9 +8,9 @@ import java.util.List;
 
 public interface DeviceMapper extends MyMapper<Device> {
 
-    public List<DeviceVo> findAllDetail();
+    public List<DeviceVo> findByPage();
 
-    public List<Device> findPerantDevice();
+    public void deleteAll();
 
-    public Integer findMaxIndex(Device device);
+    public void insertDevice(Device device);
 }

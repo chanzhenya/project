@@ -4,11 +4,11 @@ import com.bgy.device.entity.DeviceType;
 
 import java.util.List;
 
+/**
+ * @author Judith
+ * @date 2018/12/13
+ */
 public interface DeviceTypeService {
 
     public List<DeviceType> findAll();
-
-    public void save(DeviceType deviceType);
-
-    public void delete(List<DeviceType> deviceTypes) throws Exception;
 }
