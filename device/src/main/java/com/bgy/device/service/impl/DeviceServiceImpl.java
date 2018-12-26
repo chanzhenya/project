@@ -39,6 +39,12 @@ public class DeviceServiceImpl implements DeviceService {
     @Autowired
     private TableInfoMapper tableInfoMapper;
 
+    @Autowired
+    private CookDishesMapper cookDishesMapper;
+
+    @Autowired
+    private OrderDishesMapper orderDishesMapper;
+
     @Override
     public List<DeviceVo> findAll() {
         return deviceMapper.findByPage();
@@ -107,6 +113,13 @@ public class DeviceServiceImpl implements DeviceService {
         dish.setDeviceId(deviceId);
         dish.setId(String.valueOf(IdUtil.genItemId()));
         deviceAndDishMapper.insert(dish);
+    }
+
+    @Override
+    @Transactional
+    public void initDatabase() {
+        cookDishesMapper.deleteByState();
+        orderDishesMapper.truncateTable();
     }
 
     private void syncDeivce(JSONArray deviceList) {

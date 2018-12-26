@@ -25,6 +25,9 @@ function initTable(){
         columns: [{
             checkbox: true
         }, {
+            field: 'deviceId',
+            title: '设备ID'
+        }, {
             field: 'deviceName',
             title: '设备名称'
         }, {
@@ -38,10 +41,11 @@ function initTable(){
             title: '设备类型'
         }, {
             field: 'pdeviceName',
-            title: '所属设备'
+            title: '所属设备',
+            formatter: pdeviceFormatter
         }, {
             field: 'online',
-            title: '是否在线/是否空闲',
+            title: '在线/空闲',
             formatter: onlineFormatter
         }, {
             field: 'stationType',
@@ -63,6 +67,14 @@ function initTable(){
             formatter: operateFormatter
         }, ]
     });
+}
+
+function pdeviceFormatter(value, row, index) {
+    if(row.pid != null) {
+        return row.pid + "-" + row.pdeviceName;
+    } else {
+        return null;
+    }
 }
 
 function onlineFormatter(value, row, index) {

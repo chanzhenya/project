@@ -25,4 +25,9 @@ public class ViewController {
     public String dish() {
         return "dish";
     }
+
+    @GetMapping("/device-start")
+    public String deviceStart() {
+        return "device-start";
+    }
 }

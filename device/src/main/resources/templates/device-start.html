@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{static/js/jquery.min.js}"></script>
+
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <script th:src="@{static/bootstrap/js/bootstrap.min.js}"></script>
+
+    <link href="static/toastr/toastr.css" rel="stylesheet" media="screen"/>
+    <script th:src="@{static/toastr/toastr.js}"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <div class="panelBar" th:replace="head::headBar"></div>
+
+    <div class="container">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                设备调度系统
+            </div>
+            <div class="panel-body">
+                <div style="width: 100%;">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <button class="btn btn-success" data-text="启动" id="btn_start" style="margin: 0 7px"><span>启动</span></button>
+                        <button class="btn btn-warning" data-text="停止" id="btn_stop" style="margin: 0 7px"><span>停止</span></button>
+                        <button class="btn btn-primary" data-text="重启" id="btn_restart" style="margin: 0 7px"><span>重启</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                云轨调度系统
+            </div>
+            <div class="panel-body">
+                <div style="width: 100%;">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <button class="btn btn-success" data-text="启动" id="btn_start_2" style="margin: 0 7px"><span>启动</span></button>
+                        <button class="btn btn-warning" data-text="停止" id="btn_stop_2" style="margin: 0 7px"><span>停止</span></button>
+                        <button class="btn btn-primary" data-text="重启" id="btn_restart_2" style="margin: 0 7px"><span>重启</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p></p>
+
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                订单调度数据库初始化
+            </div>
+            <div class="panel-body">
+                <div style="width: 100%;">
+                    <div class="control-group" style="width: 100%; display: inline-flex; padding: 3px 0">
+                        <button class="btn btn-primary" data-text="初始化" id="btn_init" ><span>初始化</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" th:inline="javascript">
+    /*<![CDATA[*/
+    ctxPath = /*[[@{/}]]*/ '';
+    /*]]>*/
+</script>
+<script th:src="@{static/js/device-start.js}"></script>
+</html>

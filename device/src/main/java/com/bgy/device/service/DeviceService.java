@@ -23,4 +23,6 @@ public interface DeviceService {
     public void deleteDeviceDish(DeviceAndDish deviceAndDish);
 
     public void insertDeviceDish(String deviceId, String id);
+
+    public void initDatabase();
 }

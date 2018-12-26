@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.bgy.device.mapper.CookDishesMapper" >
+  <resultMap id="BaseResultMap" type="com.bgy.device.entity.CookDishes" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" property="id" jdbcType="VARCHAR" />
+    <result column="productId" property="productid" jdbcType="VARCHAR" />
+    <result column="dishId" property="dishid" jdbcType="VARCHAR" />
+    <result column="orderId" property="orderid" jdbcType="VARCHAR" />
+    <result column="tableId" property="tableid" jdbcType="VARCHAR" />
+    <result column="branchId" property="branchid" jdbcType="VARCHAR" />
+    <result column="createTime" property="createtime" jdbcType="VARCHAR" />
+    <result column="finishTime" property="finishtime" jdbcType="VARCHAR" />
+    <result column="state" property="state" jdbcType="INTEGER" />
+    <result column="deleteFlag" property="deleteflag" jdbcType="INTEGER" />
+    <result column="potId" property="potid" jdbcType="VARCHAR" />
+    <result column="RFId" property="rfid" jdbcType="VARCHAR" />
+    <result column="belitId" property="belitid" jdbcType="VARCHAR" />
+    <result column="updateTime" property="updatetime" jdbcType="VARCHAR" />
+    <result column="potNumber" property="potnumber" jdbcType="INTEGER" />
+    <result column="time0" property="time0" jdbcType="VARCHAR" />
+    <result column="time1" property="time1" jdbcType="VARCHAR" />
+  </resultMap>
+
+  <delete id="deleteByState">
+    delete from cook_dishes where state = 20
+  </delete>
+</mapper>
