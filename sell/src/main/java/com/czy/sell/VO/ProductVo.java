@@ -1,5 +1,6 @@
-package com.czy.sell.web.value;
+package com.czy.sell.VO;
 
+import com.czy.sell.VO.ProductInfoVo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;
 

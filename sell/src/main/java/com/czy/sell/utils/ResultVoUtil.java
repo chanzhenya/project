@@ -1,6 +1,6 @@
-package com.czy.sell.web.utils;
+package com.czy.sell.utils;
 
-import com.czy.sell.web.value.ResultVo;
+import com.czy.sell.VO.ResultVo;
 
 /**
  * @author Judith

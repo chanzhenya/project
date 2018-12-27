@@ -1,6 +1,5 @@
-package com.czy.sell.entity.enums;
+package com.czy.sell.enums;
 
-import lombok.Data;
 import lombok.Getter;
 
 @Getter

@@ -1,19 +1,19 @@
-package com.czy.sell.entity.enums;
+package com.czy.sell.enums;
 
 /**
  * @author Judith
  * @date 2018/12/7
  */
-public enum OrderStatusEnum {
-    NEW(0, "新订单"),
-    FINISHED(1, "完结"),
-    CANCEL(2, "已取消");
+public enum PayStatusEnum {
+
+    WAIT(0, "等待支付"),
+    SUCCESS(1, "支付成功");
 
     private Integer code;
 
     private String message;
 
-    OrderStatusEnum(Integer code, String message) {
+    PayStatusEnum(Integer code, String message) {
         this.code = code;
         this.message = message;
     }

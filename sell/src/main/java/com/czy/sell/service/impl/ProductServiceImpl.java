@@ -1,7 +1,7 @@
 package com.czy.sell.service.impl;
 
 import com.czy.sell.entity.ProductInfo;
-import com.czy.sell.entity.enums.ProductStatusEnum;
+import com.czy.sell.enums.ProductStatusEnum;
 import com.czy.sell.repository.ProductInfoRepository;
 import com.czy.sell.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;

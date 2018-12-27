@@ -1,13 +1,13 @@
-package com.czy.sell.web.controller;
+package com.czy.sell.controller;
 
+import com.czy.sell.VO.ResultVo;
 import com.czy.sell.entity.ProductCategory;
 import com.czy.sell.entity.ProductInfo;
 import com.czy.sell.service.CategoryService;
 import com.czy.sell.service.ProductService;
-import com.czy.sell.web.utils.ResultVoUtil;
-import com.czy.sell.web.value.ProductInfoVo;
-import com.czy.sell.web.value.ProductVo;
-import com.czy.sell.web.value.ResultVo;
+import com.czy.sell.utils.ResultVoUtil;
+import com.czy.sell.VO.ProductInfoVo;
+import com.czy.sell.VO.ProductVo;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
