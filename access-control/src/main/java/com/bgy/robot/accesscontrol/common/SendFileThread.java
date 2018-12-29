@@ -22,6 +22,10 @@ public class SendFileThread extends Thread implements Runnable {
         this.multipartFile = multipartFile;
     }
 
+    public SendFileThread(Socket socket){
+        this.socket = socket;
+    }
+
     @Override
     public void run() {
         try {
@@ -29,17 +33,20 @@ public class SendFileThread extends Thread implements Runnable {
             DataOutputStream toServerStream = new DataOutputStream(socket.getOutputStream());
 
             //初始化文件信息
-//            File file = new File("C:\\Users\\Judith\\Desktop\\文件\\组员照片\\梁以铭.jpg");
-//            FileInputStream fileInputStream = new FileInputStream(file);
-            InputStream fileInputStream = multipartFile.getInputStream();
+            File file = new File("C:\\Users\\Judith\\Desktop\\文件\\组员照片\\余志祥.jpg");
+            FileInputStream fileInputStream = new FileInputStream(file);
+//            InputStream fileInputStream = multipartFile.getInputStream();
 
             //1. 发送图片的分辨率
-            int fileLen = (int) multipartFile.getSize();
-            BufferedImage image = ImageIO.read(fileInputStream);
-            int width = image.getWidth();
-            int height = image.getHeight();
-            toServerStream.write(transform.StringToByteArray(width+"_"+height));
+            int fileLen = (int) file.length();
+            toServerStream.write(transform.LongToByteArray(file.length()));
             toServerStream.flush();
+//            int fileLen = (int) multipartFile.getSize();
+//            BufferedImage image = ImageIO.read(fileInputStream);
+//            int width = image.getWidth();
+//            int height = image.getHeight();
+//            toServerStream.write(transform.StringToByteArray(width+"_"+height));
+//            toServerStream.flush();
 
             //2. 确认服务端已经做好准备
             Boolean isOk;

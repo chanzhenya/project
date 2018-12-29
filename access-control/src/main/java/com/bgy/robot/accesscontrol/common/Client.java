@@ -18,7 +18,7 @@ public class Client {
 
     public static void main(String [] args) {
         try {
-            Socket socket = new Socket("10.8.102.127",8888);
+            Socket socket = new Socket("10.8.102.149",8888);
             toServerStream = new DataOutputStream(socket.getOutputStream());
 
             //发送要发送文件的指令
@@ -29,8 +29,8 @@ public class Client {
             toServerStream.flush();
 
             //启动发送文件线程
-//            SendFileThread sendFileThread = new SendFileThread(socket);
-//            sendFileThread.start();
+            SendFileThread sendFileThread = new SendFileThread(socket);
+            sendFileThread.start();
         } catch (UnknownHostException e) {
             e.printStackTrace();
         } catch (IOException e) {
