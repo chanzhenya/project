@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bgy.robot.mapper.RobotInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.bgy.robot.entity.RobotInfo">
+        <id column="id" property="id" />
+        <result column="robot_no" property="robotNo" />
+        <result column="robot_status" property="robotStatus" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, robot_no, robot_status
+    </sql>
+</mapper>
