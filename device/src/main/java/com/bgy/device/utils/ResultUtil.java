@@ -12,6 +12,14 @@ public class ResultUtil {
         return resultVo;
     }
 
+    public static ResultVo success(String msg) {
+        ResultVo resultVo = new ResultVo();
+        resultVo.setCode(200);
+        resultVo.setMsg(msg);
+        resultVo.setData(null);
+        return resultVo;
+    }
+
     public static ResultVo error(String msg) {
         ResultVo resultVo = new ResultVo();
         resultVo.setCode(500);

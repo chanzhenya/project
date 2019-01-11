@@ -13,9 +13,9 @@
         </plugin>
 
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://10.8.108.8:3306/robot_restaurant"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/device"
                         userId="root"
-                        password="bgy123456">
+                        password="root">
         </jdbcConnection>
 
         <javaModelGenerator targetPackage="com.bgy.device.entity" targetProject="src/main/java"/>
@@ -32,7 +32,13 @@
         <!--<table tableName="device_type"></table>-->
         <!--<table tableName="table_info"></table>-->
 
-        <table tableName="cook_dishes"></table>
-        <table tableName="order_dishes"></table>
+        <!--<table tableName="cook_dishes"></table>-->
+        <!--<table tableName="order_dishes"></table>-->
+
+        <!--<table tableName="sys_permission"></table>-->
+        <!--<table tableName="sys_role"></table>-->
+        <table tableName="sys_role_permission"></table>
+        <!--<table tableName="sys_user"></table>-->
+        <!--<table tableName="sys_user_role"></table>-->
     </context>
 </generatorConfiguration>

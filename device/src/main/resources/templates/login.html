@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0">
+    <script th:src="@{static/js/jquery.min.js}"></script>
+
+    <link href="static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
+    <script th:src="@{static/bootstrap/js/bootstrap.min.js}"></script>
+
+    <link href="static/toastr/toastr.css" rel="stylesheet" media="screen"/>
+    <script th:src="@{static/toastr/toastr.js}"></script>
+    <link href="static/css/device.css" rel="stylesheet" media="screen"/>
+
+    <link href="static/css/login.css" rel="stylesheet" media="screen"/>
+    <title>设备信息配置</title>
+</head>
+<body style="background: #ebebeb">
+    <div class="container">
+        <div class="page-header" style="text-align: center;">
+            <h1>设备信息配置</h1>
+        </div>
+        <p></p>
+        <form method="post">
+            <div class="form row">
+                <div class="form-horizontal col-md-offset-3" id="login_form">
+                    <h3 class="form-title">LOGIN</h3>
+                    <div class="col-md-9">
+                        <div class="form-group">
+                            <i class="fa fa-user fa-lg"></i>
+                            <input class="form-control required" type="text" placeholder="Username" id="username" name="username" autofocus="autofocus" maxlength="20"/>
+                        </div>
+                        <div class="form-group">
+                            <i class="fa fa-lock fa-lg"></i>
+                            <input class="form-control required" type="password" placeholder="Password" id="password" name="password" maxlength="12"/>
+                        </div>
+                        <div class="form-group">
+                        </div>
+                        <div class="form-group col-md-offset-9" style="padding-bottom: 15px;">
+                            <button type="submit" class="btn btn-success pull-right" name="submit" style="width: 100%;" id="login-btn">登录</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

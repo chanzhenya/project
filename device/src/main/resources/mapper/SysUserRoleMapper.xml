@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.bgy.device.mapper.SysUserRoleMapper">
+  <resultMap id="BaseResultMap" type="com.bgy.device.entity.SysUserRole">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="user_id" jdbcType="INTEGER" property="userId" />
+    <result column="role_id" jdbcType="INTEGER" property="roleId" />
+  </resultMap>
+
+  <select id="findBySysUser" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    SELECT * FROM `sys_user_role` WHERE `user_id` = #{userId,jdbcType=INTEGER}
+  </select>
+</mapper>

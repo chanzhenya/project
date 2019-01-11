@@ -3,13 +3,13 @@ server:
     uri-encoding: UTF-8
   port: 8082
   servlet:
-    context-path: /device
+    context-path: /
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.8.108.8:3306/robot_restaurant?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
+    url: jdbc:mysql://10.8.108.15:3306/robot_restaurant?useUnicode=true&characterEncoding=utf8&serverTimezone=GMT%2B8&useSSL=false
     username: root
-    password: bgy123456
+    password: Bgy@123456
     druid:
       initial-size: 1
       min-idle: 1

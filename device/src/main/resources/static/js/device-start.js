@@ -37,6 +37,21 @@ function initButton() {
         execute(cmd);
     });
 
+    $('#btn_start_3').click(function () {
+        cmd = 6;
+        execute(cmd)
+    });
+
+    $('#btn_stop_3').click(function () {
+        cmd = 7;
+        execute(cmd);
+    });
+
+    $('#btn_restart_3').click(function () {
+        cmd = 8;
+        execute(cmd);
+    });
+
     $('#btn_init').click(function () {
         $.ajax({
             url: ctxPath + 'device-start/init',

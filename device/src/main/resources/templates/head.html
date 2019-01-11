@@ -2,8 +2,12 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <body>
     <div th:fragment="headBar" style="padding-bottom: 30px;">
-        <div class="page-header">
+        <div class="page-header" style="width: 100%; display: inline-flex;position: relative;">
             <h1>设备信息配置</h1>
+            <div style="position: absolute; right: 0; bottom: 10px;">
+                <span th:text="${user.username}">user</span>
+                <a href="../logout">注销</a>
+            </div>
         </div>
         <p></p>
         <ul id="myTab" class="nav nav-pills nav-justified">

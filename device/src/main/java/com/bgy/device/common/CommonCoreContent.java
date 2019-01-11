@@ -14,5 +14,7 @@ public class CommonCoreContent {
     public static String SYNC_URL = "https://bzl.yeehot.cn/canteen/device/sync";
 
     public static List<String> cmdList = Arrays.asList("/etc/init.d/dispatchSys start","/etc/init.d/dispatchSys stop","/etc/init.d/dispatchSys restart",
-            "/etc/init.d/schedulecloud start","/etc/init.d/schedulecloud stop","/etc/init.d/schedulecloud restart");
-}
+            "/etc/init.d/schedulecloud start","/etc/init.d/schedulecloud stop",
+            "/etc/init.d/schedulecloud restart","/etc/init.d/plcCOM start", "/etc/init.d/plcCOM stop",
+            "/etc/init.d/plcCOM restart");
+        }
