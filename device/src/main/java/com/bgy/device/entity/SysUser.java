@@ -1,28 +1,31 @@
 package com.bgy.device.entity;
 
+import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "sys_user")
 public class SysUser {
     @Id
-    private Integer id;
+    @Column(name = "` user_id`")
+    private Integer userId;
 
     private String username;
 
-    private String password;
+    @Column(name = "create_time")
+    private Date createTime;
 
     /**
-     * @return id
+     * @return  user_id
      */
-    public Integer getId() {
-        return id;
+    public Integer getUserId() {
+        return userId;
     }
 
     /**
-     * @param id
+     * @param userId
      */
-    public void setId(Integer id) {
-        this.id = id;
+    public void setUserId(Integer userId) {
+        this.userId = userId;
     }
 
     /**
@@ -40,16 +43,16 @@ public class SysUser {
     }
 
     /**
-     * @return password
+     * @return create_time
      */
-    public String getPassword() {
-        return password;
+    public Date getCreateTime() {
+        return createTime;
     }
 
     /**
-     * @param password
+     * @param createTime
      */
-    public void setPassword(String password) {
-        this.password = password;
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 }

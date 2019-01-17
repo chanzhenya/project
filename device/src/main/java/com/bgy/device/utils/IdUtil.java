@@ -137,4 +137,16 @@ public class IdUtil {
         nums[i] = nums[j];
         nums[j] = temp;
     }
+
+    public static String generateString() {
+        String ku = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+        StringBuilder stringBuilder = new StringBuilder();
+        Random random = new Random();
+        int randomNum = random.nextInt(10)+1;
+        for(int i=0;i<randomNum;i++) {
+            int index = random.nextInt(ku.length());
+            stringBuilder.append(ku.charAt(index));
+        }
+        return stringBuilder.toString();
+    }
 }

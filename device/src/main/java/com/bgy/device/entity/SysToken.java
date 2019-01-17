@@ -2,13 +2,18 @@ package com.bgy.device.entity;
 
 import javax.persistence.*;
 
-@Table(name = "sys_user_role")
-public class SysUserRole {
+@Table(name = "sys_token")
+public class SysToken {
+    @Id
     @Column(name = "user_id")
     private Integer userId;
 
-    @Column(name = "role_id")
-    private Integer roleId;
+    private String token;
+
+    public SysToken(Integer userId, String token) {
+        this.userId = userId;
+        this.token = token;
+    }
 
     /**
      * @return user_id
@@ -25,16 +30,16 @@ public class SysUserRole {
     }
 
     /**
-     * @return role_id
+     * @return token
      */
-    public Integer getRoleId() {
-        return roleId;
+    public String getToken() {
+        return token;
     }
 
     /**
-     * @param roleId
+     * @param token
      */
-    public void setRoleId(Integer roleId) {
-        this.roleId = roleId;
+    public void setToken(String token) {
+        this.token = token;
     }
 }

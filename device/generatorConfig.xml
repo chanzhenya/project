@@ -35,10 +35,7 @@
         <!--<table tableName="cook_dishes"></table>-->
         <!--<table tableName="order_dishes"></table>-->
 
-        <!--<table tableName="sys_permission"></table>-->
-        <!--<table tableName="sys_role"></table>-->
-        <table tableName="sys_role_permission"></table>
-        <!--<table tableName="sys_user"></table>-->
-        <!--<table tableName="sys_user_role"></table>-->
+        <table tableName="sys_user"></table>
+        <table tableName="sys_token"></table>
     </context>
 </generatorConfiguration>

@@ -26,7 +26,8 @@ function initTable(){
             checkbox: true
         }, {
             field: 'deviceId',
-            title: '设备ID'
+            title: '设备ID',
+            width: 150
         }, {
             field: 'deviceName',
             title: '设备名称'
@@ -71,7 +72,7 @@ function initTable(){
 
 function pdeviceFormatter(value, row, index) {
     if(row.pid != null) {
-        return row.pid + "-" + row.pdeviceName;
+        return row.pdeviceName;
     } else {
         return null;
     }
