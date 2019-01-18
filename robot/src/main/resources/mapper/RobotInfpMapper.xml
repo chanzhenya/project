@@ -4,13 +4,36 @@
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.bgy.robot.entity.RobotInfo">
-        <id column="id" property="id" />
-        <result column="robot_no" property="robotNo" />
-        <result column="robot_status" property="robotStatus" />
+        <id column="robot_id" property="robotId" jdbcType="VARCHAR" />
+        <result column="robot_status" property="robotStatus" jdbcType="INTEGER" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, robot_no, robot_status
+        robot_id, robot_status
     </sql>
+
+    <select id="findByRobotId" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from robot_info where robot_id=#{robotId, jdbcType=VARCHAR}
+    </select>
+
+    <select id="findByRobotStatus" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select * from robot_info where robot_status=#{status, jdbcType=INTEGER}
+    </select>
+
+    <update id="updateByRobotId" parameterType="com.bgy.robot.entity.RobotInfo">
+        update robot_info
+        <set>
+            <if test="robotStatus != null">
+                robot_status=#{robotStatus, jdbcType=INTEGER}
+            </if>
+        </set>
+        <where>
+            robot_id=#{robotId, jdbcType=VARCHAR}
+        </where>
+    </update>
+
+    <select id="findAll" resultMap="BaseResultMap">
+        SELECT * FROM `robot_info`
+    </select>
 </mapper>

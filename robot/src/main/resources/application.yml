@@ -1,0 +1,48 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://10.8.108.15:3306/service_robot?useUnicode=true&characterEncoding=UTF-8
+    username: root
+    password: Bgy@123456
+    druid:
+      initial-size: 1
+      min-idle: 1
+      max-actice: 20
+      test-on-borrow: true
+      stat-view-servlet:
+        allow: true
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+  mvc:
+    static-path-pattern: /static/**
+  redis:
+    database: 1
+    host: 10.8.108.15
+    port: 6379
+    jedis:
+      pool:
+        max-active: 8
+        max-wait: -1ms
+        max-idle: 8
+        min-idle: 0
+    timeout: 5000ms
+#  kafka:
+#    consumer:
+#      enable-auto-commit: true
+#      group-id: delivery-robot-1
+#      auto-offset-reset: latest
+#      bootstrap-servers: 120.77.180.187:9092
+mybatis-plus:
+  mapper-locations: classpath*:mapper/*.xml
+  type-aliases-package: com.bgy.robot.entity
+  type-aliases-super-type: java.lang.Object
+server:
+  port: 8083
+  servlet:
+    context-path: /serviceRobot

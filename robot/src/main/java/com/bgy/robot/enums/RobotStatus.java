@@ -8,9 +8,9 @@ import lombok.Getter;
  */
 @Getter
 public enum RobotStatus {
-    WAITING("原地等待中...",1),
+    WAITING("空闲",0),
 
-    WORKING("接待客户中...",0);
+    WORKING("任务中",1);
 
     private String message;
 

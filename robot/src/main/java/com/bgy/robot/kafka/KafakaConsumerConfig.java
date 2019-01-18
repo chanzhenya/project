@@ -17,7 +17,7 @@ import java.util.Map;
  * @author Judith
  * @date 2019/1/4
  */
-@Configuration
+//@Configuration
 public class KafakaConsumerConfig {
 
     private String brokers = "120.77.180.187:9092";

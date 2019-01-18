@@ -14,9 +14,7 @@ public class RobotInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private Integer id;
-
-    private String robotNo;
+    private String robotId;
 
     private Integer robotStatus = RobotStatus.WAITING.getCode();
 }

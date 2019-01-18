@@ -9,6 +9,8 @@ import com.bgy.robot.service.RobotService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @author Judith
  * @date 2019/1/4
@@ -20,16 +22,24 @@ public class RobotServiceImpl extends ServiceImpl<RobotInfoMapper, RobotInfo> im
     private RobotInfoMapper robotInfoMapper;
 
     @Override
-    public RobotInfo findByRobotStatus(RobotStatus robotStatus) {
-        RobotInfo robotInfo = new RobotInfo();
-        robotInfo.setRobotStatus(robotStatus.getCode());
-        QueryWrapper<RobotInfo> queryWrapper = new QueryWrapper<>(robotInfo);
-        RobotInfo result = robotInfoMapper.selectOne(queryWrapper);
+    public List<RobotInfo> findByRobotStatus(RobotStatus robotStatus) {
+        List<RobotInfo> result = robotInfoMapper.findByRobotStatus(robotStatus.getCode());
         return result;
     }
 
     @Override
     public void updateRobot(RobotInfo robotInfo) {
-        robotInfoMapper.updateById(robotInfo);
+        RobotInfo tmp = robotInfoMapper.findByRobotId(robotInfo.getRobotId());
+        if(tmp != null) {
+            robotInfoMapper.updateByRobotId(robotInfo);
+        } else {
+            robotInfoMapper.insert(robotInfo);
+
+        }
+    }
+
+    @Override
+    public List<RobotInfo> findAll() {
+        return robotInfoMapper.findAll();
     }
 }

@@ -16,13 +16,13 @@ import java.time.LocalDateTime;
  * @author Judith
  * @date 2018/12/17
  */
-@Component
+//@Component
 public class KafkaConsumer {
 
     @Autowired
     private OrderService orderService;
 
-    @KafkaListener(topics = {"Topic_Test"},id = "delivery-robot-1", containerFactory = "kafkaListenerContainerFactory1")
+    //@KafkaListener(topics = {"Topic_Test"},id = "delivery-robot-1", containerFactory = "kafkaListenerContainerFactory1")
     public void receive(String message) {
         System.out.println("kafka_test 1----消费消息："+message);
 //        try {
