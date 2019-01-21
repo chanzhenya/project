@@ -1,9 +1,9 @@
 spring:
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://10.8.108.15:3306/service_robot?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://127.0.0.1:3306/robot?useUnicode=true&characterEncoding=UTF-8
     username: root
-    password: Bgy@123456
+    password: root
     druid:
       initial-size: 1
       min-idle: 1
@@ -21,17 +21,17 @@ spring:
     cache: false
   mvc:
     static-path-pattern: /static/**
-  redis:
-    database: 1
-    host: 10.8.108.15
-    port: 6379
-    jedis:
-      pool:
-        max-active: 8
-        max-wait: -1ms
-        max-idle: 8
-        min-idle: 0
-    timeout: 5000ms
+#  redis:
+#    database: 1
+#    host: 10.8.108.15
+#    port: 6379
+#    jedis:
+#      pool:
+#        max-active: 8
+#        max-wait: -1ms
+#        max-idle: 8
+#        min-idle: 0
+#    timeout: 5000ms
 #  kafka:
 #    consumer:
 #      enable-auto-commit: true
