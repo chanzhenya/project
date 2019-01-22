@@ -16,12 +16,14 @@ function initTable(){
     $('#device_table').bootstrapTable({
         url: ctxPath+'device/list',
         method: 'POST',
-        toolbar: 'toolbar',
+        toolbar: '#toolbar',
         striped: true,
         cache: false,
         clickToSelect: true,
         uniqueId: "deviceId",
         pagination: true,
+        search: true,
+        showColumns: true,
         columns: [{
             checkbox: true
         }, {

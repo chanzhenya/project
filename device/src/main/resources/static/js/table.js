@@ -13,7 +13,7 @@ function initTable(){
     $('#branch_table').bootstrapTable({
         url: ctxPath+'table/list',
         method: 'POST',
-        toolbar: 'toolbar',
+        toolbar: '#toolbar',
         striped: true,
         cache: false,
         clickToSelect: true,

@@ -14,7 +14,7 @@ function initTable(){
     $('#dish_table').bootstrapTable({
         url: ctxPath+'dish/list',
         method: 'POST',
-        toolbar: 'toolbar',
+        toolbar: '#toolbar',
         striped: true,
         cache: false,
         clickToSelect: true,
